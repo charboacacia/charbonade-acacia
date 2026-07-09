@@ -102,7 +102,8 @@ p { color: var(--color-text); }
 .text-light { color: var(--color-text-light); }
 
 .section--dark h1, .section--dark h2, .section--dark h3,
-.section--dark p, .section--dark .lede { color: var(--color-white); }
+.section--dark p, .section--dark .lede,
+.hero h1, .hero h2, .hero h3, .hero p { color: var(--color-white); }
 .section--dark .lede { color: rgba(255, 255, 255, 0.72); }
 
 .section--dark .hours-table__row { color: rgba(255, 255, 255, 0.9); border-bottom-color: rgba(255, 255, 255, 0.15); }
