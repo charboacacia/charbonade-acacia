@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra historia — Restaurant Acacia</title>
+<meta name="description" content="La historia de la familia y del Restaurant Acacia, grill y charbonnades en el barrio Les Acacias de Ginebra.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true" focusable="false">
+  <symbol id="acacia-motif" viewBox="0 0 240 150">
+    <path d="M12,72 C18,42 45,28 72,36 C88,14 132,14 150,34 C178,20 212,34 228,58 C234,68 226,78 210,74 C192,82 162,80 142,68 C112,82 72,82 50,70 C30,80 10,82 12,72 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M120,148 L120,110 M120,110 L98,66 M120,110 L142,66 M104,84 L88,60 M136,84 L152,60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__brand" href="/es/index.html">
+      <img src="/assets/logo.png" alt="Restaurant Acacia">
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir el menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+      <a href="/es/index.html">Inicio</a>
+      <a href="/es/menu.html">Menú</a>
+      <a href="/es/reserva.html">Reservas</a>
+      <a href="/es/historia.html" class="is-active">Nuestra historia</a>
+      <div class="nav__lang">
+        <a href="/histoire.html">FR</a>
+        <span class="nav__lang-sep">|</span>
+        <a href="/es/historia.html" class="is-active">ES</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="section section--tight">
+    <div class="container section-head reveal">
+      <p class="eyebrow">Nuestra historia</p>
+      <h1>Una familia, dos países, una mesa</h1>
+      <p class="lede">De Bolivia a Ginebra, la historia de Acacia es ante todo la de una familia que eligió compartir su cocina como se comparte su casa.</p>
+    </div>
+  </section>
+
+  <!-- TODO: afinar cada tiempo del relato con Carolina y Gilberto si hace falta (título principal ya validado) -->
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="story-beat reveal">
+        <div class="story-beat__media img-placeholder" data-caption="Foto próximamente — la familia">
+          <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+        </div>
+        <div>
+          <p class="eyebrow">La llegada</p>
+          <h2>De Bolivia a Ginebra</h2>
+          <p>Carolina y Gilberto dejaron Bolivia con, en sus maletas, recetas transmitidas de generación en generación. Ginebra se convirtió en su nuevo hogar — y muy pronto, en el deseo de dar a conocer los sabores de su país.</p>
+        </div>
+      </div>
+
+      <div class="story-beat story-beat--reverse reveal">
+        <div class="story-beat__media img-placeholder" data-caption="Foto próximamente — platos en cocina">
+          <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+        </div>
+        <div>
+          <p class="eyebrow">La cocina de casa</p>
+          <h2>La charbonnade, una idea que se les parece</h2>
+          <p>Aquí no hay carta boliviana, sino un grill generoso pensado para reunirse alrededor de la mesa. La charbonnade — esas parrilladas libres que se comparten sin contar — se convirtió en la firma de la casa, a imagen de sus ganas de hacer durar las comidas.</p>
+        </div>
+      </div>
+
+      <div class="story-beat reveal">
+        <div class="story-beat__media img-placeholder" data-caption="Foto próximamente — el barrio">
+          <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+        </div>
+        <div>
+          <p class="eyebrow">Les Acacias, un barrio, un nombre</p>
+          <h2>Una linda coincidencia geográfica</h2>
+          <p>El restaurante lleva el nombre del barrio ginebrino que lo acoge — Les Acacias. Un guiño que la familia adoptó con gusto: aquí también, se aman los lugares que se toman el tiempo de crecer y de acoger.</p>
+        </div>
+      </div>
+
+      <div class="story-beat story-beat--reverse reveal">
+        <div class="story-beat__media img-placeholder" data-caption="Foto próximamente — la sala hoy">
+          <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+        </div>
+        <div>
+          <p class="eyebrow">Hoy</p>
+          <h2>Una mesa abierta a todos</h2>
+          <p>Hoy, Acacia es un lugar donde se viene por un menú del día entre colegas como por una comida en familia. La puerta sigue abierta, y la mesa también.</p>
+          <p style="margin-top:var(--space-3)"><a href="/es/reserva.html" class="btn btn--accent">Reservar una mesa</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /TODO -->
+
+</main>
+
+<footer class="site-footer">
+  <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand">
+        <img src="/assets/logo-light.png" alt="">
+        <span>Restaurant Acacia</span>
+      </div>
+      <p style="color:rgba(255,255,255,.72)">Parrilladas, charbonnades &amp; generosidad — barrio Les Acacias, Ginebra.</p>
+    </div>
+    <div>
+      <p class="footer__title">Contacto</p>
+      <div class="footer__list">
+        <span>Rue Caroline 17, 1227 Les Acacias, Ginebra</span>
+        <a href="tel:+41223435454">022 343 54 54</a>
+        <!-- TODO: activar el enlace real de email -->
+        <a href="#" class="is-placeholder" aria-disabled="true">contact@acacia-restaurant.ch (por confirmar)</a>
+        <!-- /TODO -->
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">Horario</p>
+      <div class="footer__list">
+        <span>Lun, Jue, Vie, Dom: 11h–14h &amp; 18h–23h30</span>
+        <span>Mar, Mié, Sáb: 18h–23h30</span>
+      </div>
+    </div>
+  </div>
+  <div class="container footer__bottom cluster" style="justify-content:space-between">
+    <span>© 2026 Restaurant Acacia</span>
+    <span>Sitio por Arzabe Studio</span>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>

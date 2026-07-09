@@ -1,0 +1,8 @@
+# Fichiers bruts du client (contrat, captures, sources non traitées) — pas destinés au dépôt public.
+# Nom délibérément différent de "assets/" (le dossier servi par le site) pour éviter toute
+# ambiguïté de casse sur un système de fichiers insensible à la casse (Windows).
+client-raw/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
