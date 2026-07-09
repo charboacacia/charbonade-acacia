@@ -60,8 +60,10 @@ css:root {
 Typographie
 
 
-Titres : Playfair Display (Google Fonts) — serif élégant, chaleureux
-Corps : Inter (Google Fonts) — sans-serif lisible
+Titres : Fraunces (Google Fonts), poids 700 pour h1, 600 pour h2-h4 — serif chaleureux et
+texturé, choisi pour se démarquer du duo Playfair Display + Inter très répandu sur les sites
+générés rapidement (voir comparatif validé avec le client)
+Corps : Work Sans (Google Fonts) — sans-serif lisible, moins générique qu'Inter
 Tailles de base : 16px, line-height 1.6
 
 
