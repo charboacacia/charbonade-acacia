@@ -3,168 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant Acacia — Grillades & charbonnades à Genève</title>
-<meta name="description" content="Restaurant Acacia, grill et charbonnades au cœur du quartier Les Acacias à Genève. Menu du jour, réservations, ambiance chaleureuse.">
+<title>Restaurant Acacia — Nouveau site bientôt disponible</title>
+<meta name="description" content="Le nouveau site du Restaurant Acacia arrive bientôt.">
+<!-- Page temporaire : à retirer dès la mise en ligne du site définitif (voir branche master) -->
+<meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="/assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #F5EFE0;
+    color: #1C1C1C;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    padding: 2rem 1.25rem;
+  }
+  .card {
+    max-width: 32rem;
+  }
+  .card img {
+    height: 90px;
+    width: auto;
+    margin-bottom: 1.75rem;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    margin: 0 0 0.75rem;
+    color: #1C1C1C;
+  }
+  p.lede {
+    margin: 0 0 2rem;
+    color: #4a4a47;
+    font-size: 1.05rem;
+  }
+  .contact {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem 1.75rem;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(28, 28, 28, 0.08);
+    font-size: 0.95rem;
+  }
+  .contact a {
+    color: #2D5A27;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .contact a:hover { text-decoration: underline; }
+  .contact span { color: #6B6B6B; }
+</style>
 </head>
 <body>
-
-<svg style="position:absolute;width:0;height:0" aria-hidden="true" focusable="false">
-  <symbol id="acacia-motif" viewBox="0 0 240 150">
-    <path d="M12,72 C18,42 45,28 72,36 C88,14 132,14 150,34 C178,20 212,34 228,58 C234,68 226,78 210,74 C192,82 162,80 142,68 C112,82 72,82 50,70 C30,80 10,82 12,72 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-    <path d="M120,148 L120,110 M120,110 L98,66 M120,110 L142,66 M104,84 L88,60 M136,84 L152,60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  </symbol>
-</svg>
-
-<header class="site-header">
-  <div class="container nav">
-    <a class="nav__brand" href="/index.html">
-      <img src="/assets/logo.png" alt="Restaurant Acacia">
-    </a>
-    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav__links" id="navLinks">
-      <a href="/index.html" class="is-active">Accueil</a>
-      <a href="/menu.html">Menu</a>
-      <a href="/reservation.html">Réservations</a>
-      <a href="/histoire.html">Notre histoire</a>
-      <div class="nav__lang">
-        <a href="/index.html" class="is-active">FR</a>
-        <span class="nav__lang-sep">|</span>
-        <a href="/es/index.html">ES</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero">
-    <div class="hero__media img-placeholder img-placeholder--hero" data-caption="Photo à venir — façade / salle du restaurant">
-      <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
-    </div>
-    <div class="container hero__content reveal">
-      <p class="eyebrow">Les Acacias, Genève</p>
-      <h1>Restaurant Acacia</h1>
-      <!-- TODO: confirmer si Carolina & Gilberto veulent une accroche différente -->
-      <p class="hero__tagline">Charbonnades et grillades à partager, dans une ambiance familiale où l'on prend le temps de bien manger.</p>
-      <!-- /TODO -->
-
-      <p class="status-badge" hidden
-         data-status-badge
-         data-template-open="Ouvert, ferme à {heure}"
-         data-template-closed-today="Fermé, ouvre à {heure}"
-         data-template-closed-tomorrow="Fermé, ouvre demain à {heure}"
-         data-template-closed-other="Fermé, ouvre {jour} à {heure}"
-         data-day-names='["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"]'></p>
-      <div class="hero__actions">
-        <a href="/reservation.html" class="btn btn--accent">Réserver une table</a>
-        <a href="/menu.html" class="btn btn--outline">Voir le menu</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container section-head section-head--center reveal">
-      <p class="eyebrow">Bienvenue</p>
-      <h2>La charbonnade, notre spécialité</h2>
-      <!-- TODO: texte de présentation à valider avec Carolina & Gilberto -->
-      <p class="lede" style="margin-inline:auto">Ici, la spécialité de la maison, ce sont les charbonnades : des grillades à volonté qu'on partage entre amis ou en famille. À côté, une carte généreuse va des gambas aux pâtes fraîches en passant par le poisson et la viande. Carolina et Gilberto vous accueillent avec la chaleur qu'ils ont ramenée de leur Bolivie natale.</p>
-      <!-- /TODO -->
-    </div>
-  </section>
-
-  <section class="section section--tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Aujourd'hui</p>
-        <h2>Le menu du jour</h2>
-      </div>
-
-      <div data-menu-preview>
-        <div class="grid-3" data-menu-preview-list hidden>
-          <div class="card reveal">
-            <p class="dish-card__name" data-plat-nom="0">—</p>
-            <p class="dish-card__price" data-plat-prix="0">—</p>
-          </div>
-          <div class="card reveal reveal--delay-1">
-            <p class="dish-card__name" data-plat-nom="1">—</p>
-            <p class="dish-card__price" data-plat-prix="1">—</p>
-          </div>
-          <div class="card reveal reveal--delay-2">
-            <p class="dish-card__name" data-plat-nom="2">—</p>
-            <p class="dish-card__price" data-plat-prix="2">—</p>
-          </div>
-        </div>
-        <p class="menu-today__empty text-light" data-menu-preview-empty>Pas de menu du jour pour le moment (servi le midi, lundi/jeudi/vendredi). Notre carte complète reste valable tous les jours d'ouverture.</p>
-      </div>
-
-      <p style="margin-top:var(--space-4)"><a href="/menu.html" class="btn btn--primary">Voir la carte complète</a></p>
-    </div>
-  </section>
-
-  <section class="section section--dark">
-    <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
-    <div class="container grid-2 grid-2--align-center">
-      <div class="reveal">
-        <p class="eyebrow">Infos pratiques</p>
-        <h2>Horaires &amp; adresse</h2>
-        <!-- à revérifier avec le client : fermeture pourrait être minuit plutôt que 23h30 -->
-        <div class="hours-table">
-          <div class="hours-table__row"><span>Lun, Jeu, Ven, Dim</span><span>11h – 14h &amp; 18h – 23h30</span></div>
-          <div class="hours-table__row"><span>Mar, Mer, Sam</span><span>18h – 23h30</span></div>
-        </div>
-        <p style="margin-top:var(--space-3)">Rue Caroline 17, 1227 Les Acacias, Genève</p>
-        <p style="margin-top:var(--space-3)"><a href="/reservation.html" class="btn btn--accent">Réserver une table</a></p>
-      </div>
-      <div class="reveal reveal--delay-1 map-frame">
-        <iframe src="https://www.google.com/maps?q=Rue+Caroline+17,+1227+Les+Acacias,+Genève&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation Restaurant Acacia"></iframe>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
-  <div class="container footer__grid">
-    <div>
-      <div class="footer__brand">
-        <img src="/assets/logo-light.png" alt="">
-        <span>Restaurant Acacia</span>
-      </div>
-      <p style="color:rgba(255,255,255,.72)">Grillades et charbonnades généreuses, quartier Les Acacias, Genève.</p>
-    </div>
-    <div>
-      <p class="footer__title">Contact</p>
-      <div class="footer__list">
-        <span>Rue Caroline 17, 1227 Les Acacias, Genève</span>
-        <a href="tel:+41223435454">022 343 54 54</a>
-        <!-- TODO: activer le vrai lien email -->
-        <a href="#" class="is-placeholder" aria-disabled="true">contact@acacia-restaurant.ch (à confirmer)</a>
-        <!-- /TODO -->
-      </div>
-    </div>
-    <div>
-      <p class="footer__title">Horaires</p>
-      <div class="footer__list">
-        <span>Lun, Jeu, Ven, Dim : 11h–14h &amp; 18h–23h30</span>
-        <span>Mar, Mer, Sam : 18h–23h30</span>
-      </div>
+  <div class="card">
+    <img src="/assets/logo.png" alt="Restaurant Acacia">
+    <h1>Notre nouveau site arrive bientôt</h1>
+    <p class="lede">En attendant, on vous accueille comme toujours au restaurant.</p>
+    <div class="contact">
+      <span>Rue Caroline 17, 1227 Les Acacias, Genève</span>
+      <a href="tel:+41223435454">022 343 54 54</a>
     </div>
   </div>
-  <div class="container footer__bottom cluster" style="justify-content:space-between">
-    <span>© 2026 Restaurant Acacia</span>
-    <span>Site par Arzabe Studio</span>
-  </div>
-</footer>
-
-<script src="/js/menu.js" defer></script>
-<script src="/js/main.js" defer></script>
 </body>
 </html>
