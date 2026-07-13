@@ -17,6 +17,11 @@ Stack technique
 HTML / CSS / JavaScript vanilla — zéro framework, zéro CMS
 Pas de jQuery, pas de Bootstrap
 Hébergement : GitHub → Netlify (déploiement automatique)
+Nom de domaine acheté : charbonade-acacia.ch
+GitHub du client : https://github.com/charboacacia (Adrien = collaborateur, compte a-am86 /
+adrien.arzabe@outlook.com) — dépôt pas encore créé dedans
+Branche coming-soon = page "site en construction" à brancher sur Netlify en attendant le
+lancement (voir section Système trilingue plus bas pour la stratégie de branches)
 Formulaire de réservation : Netlify Forms
 Zéro dépendance externe sauf Google Fonts
 
