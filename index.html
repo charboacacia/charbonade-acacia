@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant Acacia — Grillades & charbonnades à Genève</title>
-<meta name="description" content="Restaurant Acacia, grill et charbonnades au cœur du quartier Les Acacias à Genève. Menu du jour, réservations, ambiance chaleureuse.">
+<title>Charbonade Acacia — Grillades & charbonnades à Genève</title>
+<meta name="description" content="Charbonade Acacia, grill et charbonnades au cœur du quartier Les Acacias à Genève. Menu du jour, réservations, ambiance chaleureuse.">
 <link rel="icon" href="/assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,14 +45,20 @@
 <main>
 
   <section class="hero">
-    <div class="hero__media img-placeholder img-placeholder--hero" data-caption="Photo à venir — façade / salle du restaurant">
-      <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+    <div class="hero__media">
+      <img src="/assets/images/pres-charbo.jpg" alt="Notre charbonade, braises et grillades préparées à table" class="hero__photo">
     </div>
+    <div class="grill-lines" aria-hidden="true"></div>
+    <div class="ember-glow" aria-hidden="true"></div>
+    <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
     <div class="container hero__content reveal">
       <p class="eyebrow">Les Acacias, Genève</p>
-      <h1>Restaurant Acacia</h1>
+      <h1 class="hero__charbonade">
+        <span class="hero__charbonade-main">Charbon<em>ade</em><br>Acacia</span>
+        <span class="hero__charbonade-sub">Grillades à volonté</span>
+      </h1>
       <!-- TODO: confirmer si Carolina & Gilberto veulent une accroche différente -->
-      <p class="hero__tagline">Charbonnades et grillades à partager, dans une ambiance familiale où l'on prend le temps de bien manger.</p>
+      <p class="hero__tagline">Une table familiale où l'on prend le temps de bien manger, autour du feu.</p>
       <!-- /TODO -->
 
       <p class="status-badge" hidden
@@ -63,7 +69,7 @@
          data-template-closed-other="Fermé, ouvre {jour} à {heure}"
          data-day-names='["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"]'></p>
       <div class="hero__actions">
-        <a href="/reservation.html" class="btn btn--accent">Réserver une table</a>
+        <a href="/reservation.html" class="btn btn--ember">Réserver une table</a>
         <a href="/menu.html" class="btn btn--outline">Voir le menu</a>
       </div>
     </div>
@@ -109,7 +115,8 @@
   </section>
 
   <section class="section section--dark">
-    <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+    <div class="section__media"><img src="/assets/images/terrasse-soir.jpg" alt=""></div>
+    <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
     <div class="container grid-2 grid-2--align-center">
       <div class="reveal">
         <p class="eyebrow">Infos pratiques</p>
@@ -131,12 +138,12 @@
 </main>
 
 <footer class="site-footer">
-  <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+  <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
   <div class="container footer__grid">
     <div>
       <div class="footer__brand">
         <img src="/assets/logo-light.png" alt="">
-        <span>Restaurant Acacia</span>
+        <span>Charbonade Acacia</span>
       </div>
       <p style="color:rgba(255,255,255,.72)">Grillades et charbonnades généreuses, quartier Les Acacias, Genève.</p>
     </div>
@@ -159,7 +166,7 @@
     </div>
   </div>
   <div class="container footer__bottom cluster" style="justify-content:space-between">
-    <span>© 2026 Restaurant Acacia</span>
+    <span>© 2026 Charbonade Acacia</span>
     <span>Site par Arzabe Studio</span>
   </div>
 </footer>

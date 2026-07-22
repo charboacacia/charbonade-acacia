@@ -45,6 +45,9 @@ async function loadMenuDuJour() {
   containers.forEach((container) => {
     const list = container.querySelector('[data-menu-preview-list], [data-menu-full-list]');
     const empty = container.querySelector('[data-menu-preview-empty], [data-menu-full-empty]');
+    // Sans menu du jour, la section ne contient qu'une phrase : elle n'a pas besoin du
+    // même gabarit (padding, marge sous le titre) que lorsque les 3 plats sont affichés.
+    const wrapper = container.closest('section');
 
     if (plats.length === 3) {
       if (list) {
@@ -57,11 +60,36 @@ async function loadMenuDuJour() {
         });
       }
       if (empty) empty.hidden = true;
+      if (wrapper) wrapper.classList.remove('menu-today--compact');
     } else {
       if (list) list.hidden = true;
       if (empty) empty.hidden = false;
+      if (wrapper) wrapper.classList.add('menu-today--compact');
     }
   });
 }
 
-document.addEventListener('DOMContentLoaded', loadMenuDuJour);
+function initMenuTabs() {
+  const tabs = document.querySelectorAll('.menu-tab');
+  if (!tabs.length) return;
+  const panels = document.querySelectorAll('[data-tab-panel]');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      panels.forEach((panel) => {
+        panel.hidden = panel.getAttribute('data-tab-panel') !== tab.getAttribute('data-tab');
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadMenuDuJour();
+  initMenuTabs();
+});

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu — Restaurant Acacia</title>
-<meta name="description" content="Découvrez le menu du jour et la carte complète du Restaurant Acacia : charbonnades, gambas, poissons, viandes et pâtes, à Genève.">
+<title>Menu — Charbonade Acacia</title>
+<meta name="description" content="Découvrez le menu du jour et la carte complète de Charbonade Acacia : charbonnades, gambas, poissons, viandes et pâtes, à Genève.">
 <link rel="icon" href="/assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,7 @@
     <div class="container section-head reveal">
       <p class="eyebrow">Notre carte</p>
       <h1>Le menu</h1>
-      <p class="lede">Menu du jour servi le midi (lundi, jeudi et vendredi, jusqu'à 14h). Notre carte complète, elle, se déguste tous les jours d'ouverture : charbonnades, gambas, poissons, viandes et pâtes.</p>
+      <p class="lede">Menu du jour servi le midi (lundi, jeudi et vendredi, jusqu'à 14h). Notre carte complète, elle, se déguste tous les jours d'ouverture : charbonnades, entrées, gambas, poissons, viandes, pâtes, boissons et vins.</p>
     </div>
   </section>
 
@@ -81,46 +81,42 @@
 
   <div class="container">
     <div class="divider--acacia" role="separator" aria-hidden="true">
-      <svg class="motif"><use href="#acacia-motif"></use></svg>
+      <svg class="motif" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
     </div>
   </div>
 
   <section class="section section--tight">
     <div class="container">
-      <div class="section-head reveal">
+      <div class="section-head reveal" style="margin-bottom:var(--space-4)">
         <p class="eyebrow">La carte</p>
         <h2>Notre carte complète</h2>
       </div>
 
       <!--
-        Carte transcrite à partir des photos de menu envoyées par le client — certaines de ces
-        photos datent de plusieurs années, d'où les incohérences ci-dessous.
-        À FAIRE (mise à jour prévue lundi avec des données à jour) :
-        - Plusieurs prix diffèrent selon les photos reçues (ex. Gambas à Gogo 33.-/37.-,
-          Bitoque de Bœuf 25.-/28.-, Entrecôte Parisienne 28.-/30.-, Charbo-Bœuf 35.-/37.-).
-        - Charbo-Gambas 8/12 et 13/15 : prix par personne à confirmer (à volonté, comme les
-          autres charbonnades — pas un prix au Kg comme indiqué sur une ancienne photo).
-        - Section Boissons pas encore disponible.
-        Les prix ci-dessous sont un choix provisoire, à ne pas considérer comme définitifs.
+        Carte transcrite directement depuis le classeur-menu physique du restaurant (juillet 2026)
+        pour les Entrées/Charbonnades/Menu Enfant/Boissons/Vins, et depuis une photo Google Maps
+        récente pour Gambas/Poissons/Viandes/Pâtes (page manquante du classeur photographié —
+        à reconfirmer avec Carolina & Gilberto à leur retour de vacances).
       -->
-      <div class="reveal">
+      <div class="menu-tabs reveal" role="tablist">
+        <button class="menu-tab is-active" type="button" data-tab="repas" role="tab" aria-selected="true">Repas</button>
+        <button class="menu-tab" type="button" data-tab="boissons" role="tab" aria-selected="false">Boissons</button>
+        <button class="menu-tab" type="button" data-tab="vins" role="tab" aria-selected="false">Vins</button>
+      </div>
+
+      <div data-tab-panel="repas">
         <div class="menu-course">
           <div class="menu-course__title"><h3>Entrées</h3></div>
-          <div class="menu-item"><span class="menu-item__name">Salade Foie de Volaille</span><span class="menu-item__price">CHF 17.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Salade Tomate Mozzarella &amp; Basilic</span><span class="menu-item__price">CHF 18.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Salade César</span><span class="menu-item__price">CHF 19.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Salade Paysanne</span><span class="menu-item__price">CHF 20.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Salade Acacia<span class="menu-item__desc">Tomate, mozzarella, crevette &amp; avocat</span></span><span class="menu-item__price">CHF 22.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Melon &amp; Jambon</span><span class="menu-item__price">CHF 18.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Cocktail de Crevettes</span><span class="menu-item__price">CHF 16.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Crevettes décortiquées à l'ail</span><span class="menu-item__price">CHF 18.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Salade Verte</span><span class="menu-item__price">CHF 6.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Cocktail de Crevette</span><span class="menu-item__price">CHF 14.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Poulpe à la Gallega</span><span class="menu-item__price">CHF 16.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Assiette de Charcuterie</span><span class="menu-item__price">CHF 18.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Tomate Mozzarella</span><span class="menu-item__price">CHF 18.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Gambas à l'ail</span><span class="menu-item__price">Kg 30.–</span></div>
         </div>
 
         <div class="menu-course">
           <div class="menu-course__title"><h3>Gambas</h3></div>
+          <!-- TODO: page Gambas/Poissons/Viandes/Pâtes reconstituée via une photo Google Maps, à reconfirmer -->
           <div class="menu-item"><span class="menu-item__name">Gambas à Gogo<span class="menu-item__desc">Min. 2 personnes · salade verte &amp; frites</span></span><span class="menu-item__price">CHF 37.–</span></div>
         </div>
 
@@ -135,52 +131,210 @@
           <div class="menu-course__title"><h3>Viandes</h3></div>
           <div class="menu-item"><span class="menu-item__name">Bitoque de Bœuf<span class="menu-item__desc">Steak, œuf au plat, riz &amp; frites</span></span><span class="menu-item__price">CHF 28.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Lomo Saltado<span class="menu-item__desc">Émincé de filet de bœuf, oignon &amp; frites</span></span><span class="menu-item__price">CHF 28.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Tartare de Bœuf au couteau<span class="menu-item__desc">Frites &amp; toasts</span></span><span class="menu-item__price">CHF 28.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Pavé de Bœuf &amp; Sauce au choix<span class="menu-item__desc">Morilles, poivre vert ou café de Paris</span></span><span class="menu-item__price">CHF 30.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Entrecôte Parisienne de Bœuf</span><span class="menu-item__price">CHF 30.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Picanha Grillée en tranche</span><span class="menu-item__price">CHF 30.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Pavé de Bœuf &amp; Sauce au choix<span class="menu-item__desc">Morilles, poivre vert ou café de Paris</span></span><span class="menu-item__price">CHF 30.–</span></div>
+          <!-- /TODO -->
         </div>
 
         <div class="menu-course">
           <div class="menu-course__title"><h3>Pâtes</h3></div>
           <div class="menu-item"><span class="menu-item__name">Penne à la Carbonara</span><span class="menu-item__price">CHF 20.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Tagliatelle Végétarienne</span><span class="menu-item__price">CHF 21.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Tagliatelle aux Crevettes</span><span class="menu-item__price">CHF 22.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Tagliatelle aux Morilles</span><span class="menu-item__price">CHF 25.–</span></div>
         </div>
 
         <div class="menu-course">
           <div class="menu-course__title"><h3>Charbonnades <span class="text-light" style="font-family:var(--font-body); font-size:0.85rem; font-weight:400;">(notre spécialité, à volonté)</span></h3></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Bœuf<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Parisienne<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
+          <p class="text-light reveal" style="margin-bottom:var(--space-3)">La braise arrive directement sur votre table : viande grillée sous vos yeux, à volonté, servie avec crudités, sauces maison et frites.</p>
+          <div class="menu-item"><span class="menu-item__name">Charbo-Rumsteack<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
           <div class="menu-item"><span class="menu-item__name">Charbo-Picanha<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Filet de Canard<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Gambas 21/30<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 35.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Gambas 8/12<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">Prix à confirmer</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Gambas 13/15<span class="menu-item__desc">À volonté par personne, min. 2 pers.</span></span><span class="menu-item__price">Prix à confirmer</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Mixte<span class="menu-item__desc">Parisienne, picanha &amp; bœuf, par personne, min. 2 pers.</span></span><span class="menu-item__price">CHF 40.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Charbo-Enfant<span class="menu-item__desc">Schübling, veau</span></span><span class="menu-item__price">CHF 12.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Nuggets de poulet, frites</span><span class="menu-item__price">CHF 12.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Fondue Bourguignonne Bœuf<span class="menu-item__desc">Min. 2 personnes</span></span><span class="menu-item__price">CHF 35.–</span></div>
-          <div class="menu-item"><span class="menu-item__name">Fondue Bourguignonne Picanha<span class="menu-item__desc">Min. 2 personnes</span></span><span class="menu-item__price">CHF 37.–</span></div>
-          <p class="text-light" style="margin-top:0.75rem"><strong>Accompagnement inclus :</strong> frites, riz, pommes vapeur, légumes, salade, sauce.</p>
-          <p class="text-light" style="margin-top:0.35rem"><strong>Sauces :</strong> poivre vert CHF 7.– · beurre mexicain CHF 7.– · café de Paris CHF 7.– · morilles CHF 15.–</p>
+          <div class="menu-item"><span class="menu-item__name">Charbo-Parisienne<span class="menu-item__desc">À volonté, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Charbo-Mixte<span class="menu-item__desc">Rumsteack, picanha &amp; parisienne, à volonté, min. 2 pers.</span></span><span class="menu-item__price">CHF 40.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Charbo-Gambas<span class="menu-item__desc">À volonté, min. 2 pers.</span></span><span class="menu-item__price">CHF 37.–</span></div>
         </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Menu Enfant</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Charbo-Enfant, jusqu'à 12 ans<span class="menu-item__desc">À volonté — bœuf, rumsteack, parisienne ou picanha</span></span><span class="menu-item__price">CHF 17.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Charbo-Enfant<span class="menu-item__desc">Saucisse schüblig ou veau</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Nuggets de poulet &amp; frites</span><span class="menu-item__price">CHF 12.–</span></div>
+        </div>
+
+        <p class="text-light" style="margin-top:0.75rem"><strong>Accompagnements :</strong> frites, riz, légumes, salade, sauce.</p>
+        <p class="text-light" style="margin-top:0.35rem"><strong>Sauces :</strong> poivre vert CHF 7.– · café de Paris CHF 7.– · beurre mexicain CHF 7.– · morilles CHF 15.–</p>
+        <p class="text-light" style="margin-top:0.35rem">Carafe d'eau du robinet 1L — CHF 3.–</p>
+        <p class="text-light" style="margin-top:1.25rem; font-size:0.85rem">Viandes, poissons et pain sont d'origine — bœuf : Suisse/Autriche · porc : Suisse · agneau : Écosse/Suisse · canard : France/Hongrie · cheval* : Argentine/Canada · saumon : Norvège/Écosse · moule : Nouvelle-Zélande · gambas : Thaïlande/Bangladesh · loup de mer : Turquie · pain : Suisse.<br>*Peut avoir été produit avec des stimulateurs de performance non hormonaux, tels que les antibiotiques.</p>
+
+        <p style="margin-top:var(--space-4)"><a href="/reservation.html" class="btn btn--accent">Réserver une table</a></p>
       </div>
 
-      <p style="margin-top:var(--space-4)"><a href="/reservation.html" class="btn btn--accent">Réserver une table</a></p>
+      <div data-tab-panel="boissons" hidden>
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Boissons chaudes</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Café</span><span class="menu-item__price">CHF 4.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Thés</span><span class="menu-item__price">CHF 3.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Renversé</span><span class="menu-item__price">CHF 4.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Chocolat</span><span class="menu-item__price">CHF 4.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Cappuccino</span><span class="menu-item__price">CHF 4.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Boissons à prix modérées</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Lait<span class="menu-item__desc">25cl</span></span><span class="menu-item__price">CHF 2.90</span></div>
+          <div class="menu-item"><span class="menu-item__name">Jus de fruit<span class="menu-item__desc">25cl</span></span><span class="menu-item__price">CHF 2.90</span></div>
+          <div class="menu-item"><span class="menu-item__name">Sirop<span class="menu-item__desc">25cl</span></span><span class="menu-item__price">CHF 2.90</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Minérale plate / gazeuse</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Bouteille<span class="menu-item__desc">50cl</span></span><span class="menu-item__price">CHF 5.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Plate PET<span class="menu-item__desc">1.5L</span></span><span class="menu-item__price">CHF 4.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Gazeuse PET<span class="menu-item__desc">1L</span></span><span class="menu-item__price">CHF 5.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Eau en pichet, du robinet<span class="menu-item__desc">1L</span></span><span class="menu-item__price">CHF 3.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Sodas</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Schweppes Tonic<span class="menu-item__desc">25cl</span></span><span class="menu-item__price">CHF 5.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Coca-Cola<span class="menu-item__desc">33cl</span></span><span class="menu-item__price">CHF 5.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Fanta<span class="menu-item__desc">33cl</span></span><span class="menu-item__price">CHF 5.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Red Bull<span class="menu-item__desc">25cl</span></span><span class="menu-item__price">CHF 6.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Thé froid<span class="menu-item__desc">30cl</span></span><span class="menu-item__price">CHF 4.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Jus nectar<span class="menu-item__desc">20cl</span></span><span class="menu-item__price">CHF 4.50</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Bière Super Bock</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Galopin<span class="menu-item__desc">20cl</span></span><span class="menu-item__price">CHF 3.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Pression<span class="menu-item__desc">30cl</span></span><span class="menu-item__price">CHF 5.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Canette<span class="menu-item__desc">50cl</span></span><span class="menu-item__price">CHF 7.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Bouteille<span class="menu-item__desc">25cl</span></span><span class="menu-item__price">CHF 4.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Sans alcool<span class="menu-item__desc">33cl</span></span><span class="menu-item__price">CHF 4.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Bulles &amp; Champagne</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Prosecco<span class="menu-item__desc">10cl</span></span><span class="menu-item__price">CHF 9.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Prosecco<span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 50.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Moët &amp; Chandon<span class="menu-item__desc">37.5cl</span></span><span class="menu-item__price">CHF 60.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Moët &amp; Chandon<span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 120.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Apéro</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Bitter Rouge<span class="menu-item__desc">0.0%</span></span><span class="menu-item__price">CHF 4.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Cocktail Acacia<span class="menu-item__desc">4cl · 14%</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Spritz Maison<span class="menu-item__desc">4cl · 18%</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Kir Royal<span class="menu-item__desc">4cl · 15%</span></span><span class="menu-item__price">CHF 10.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Kir<span class="menu-item__desc">4cl · 15%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Martini Bière<span class="menu-item__desc">4cl · 15%</span></span><span class="menu-item__price">CHF 6.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Martini<span class="menu-item__desc">4cl · 15%</span></span><span class="menu-item__price">CHF 4.50</span></div>
+          <div class="menu-item"><span class="menu-item__name">Suze<span class="menu-item__desc">4cl · 20%</span></span><span class="menu-item__price">CHF 6.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Campari<span class="menu-item__desc">4cl · 20%</span></span><span class="menu-item__price">CHF 6.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Ricard<span class="menu-item__desc">2cl · 45%</span></span><span class="menu-item__price">CHF 6.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Digestifs &amp; liqueurs</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Amarguinha<span class="menu-item__desc">4cl · 20%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Get 27<span class="menu-item__desc">4cl · 21%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Disaronno<span class="menu-item__desc">4cl · 28%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Jägermeister<span class="menu-item__desc">4cl · 35%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Limoncello<span class="menu-item__desc">4cl · 25%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Liqueur Beirão<span class="menu-item__desc">4cl · 22%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Grappa<span class="menu-item__desc">4cl · 37.5%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Bailey's<span class="menu-item__desc">4cl · 20%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Amaretto<span class="menu-item__desc">4cl · 20%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Averna<span class="menu-item__desc">4cl · 29%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Porto — Domaine Quinta do Vallado</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Porto Blanc<span class="menu-item__desc">4cl · 19%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Porto Reserva Tawny<span class="menu-item__desc">4cl · 19%</span></span><span class="menu-item__price">CHF 8.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Cognacs, brandy &amp; eau-de-vie</h3></div>
+          <div class="menu-item"><span class="menu-item__name">William Moitié Moitié<span class="menu-item__desc">4cl · 37.5%</span></span><span class="menu-item__price">CHF 13.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Rémy Martin<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 10.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Hennessy Special<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Hennessy XO<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 25.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">CR&amp;F Reserva<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 15.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">CR&amp;F Extra Reserva<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 18.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Whisky, vodka &amp; rhum</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Havana<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 10.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Zacapa<span class="menu-item__desc">4cl · 40%</span></span><span class="menu-item__price">CHF 15.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Gin<span class="menu-item__desc">4cl · 38%</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Vodka<span class="menu-item__desc">4cl · 40% · bouteille CHF 80.–</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Ballantines<span class="menu-item__desc">4cl · 40% · bouteille CHF 80.–</span></span><span class="menu-item__price">CHF 12.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Chivas<span class="menu-item__desc">4cl · 40% · bouteille CHF 120.–</span></span><span class="menu-item__price">CHF 14.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Jack Daniel's<span class="menu-item__desc">4cl · 40% · bouteille CHF 120.–</span></span><span class="menu-item__price">CHF 14.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Whisky Chinois<span class="menu-item__desc">4cl · 40% · bouteille CHF 120.–</span></span><span class="menu-item__price">CHF 14.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Rhum Diplomatico<span class="menu-item__desc">4cl · 40% · bouteille CHF 135.–</span></span><span class="menu-item__price">CHF 15.–</span></div>
+        </div>
+
+        <p class="text-light" style="margin-top:0.75rem">Tous nos digestifs sont calculés pour 4cl. Les accompagnements sont facturés à part.</p>
+      </div>
+
+      <div data-tab-panel="vins" hidden>
+        <div class="section-head">
+          <p class="eyebrow">Vin rouge</p>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Portugal — Douro</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Vallado<span class="menu-item__region">Quinta do Vallado — Douro DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 39.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Ferreirinha Callabriga<span class="menu-item__region">Casa Ferreirinha — Douro DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 53.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Vallado Touriga Nacional<span class="menu-item__region">Quinta do Vallado — Douro DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 60.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Vallado Field Blend Reserva<span class="menu-item__region">Quinta do Vallado — Douro DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 90.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Dão</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Dom Bella<span class="menu-item__region">Quinta de Bella — Dão DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 60.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Alentejo</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Herdade São Miguel Colheita Seleccionada<span class="menu-item__region">Herdade de São Miguel — Alentejo DOC</span><span class="menu-item__desc">50cl</span></span><span class="menu-item__price">CHF 22.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Herdade São Miguel Colheita Seleccionada<span class="menu-item__region">Herdade de São Miguel — Alentejo DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 35.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Trinca Bolotas<span class="menu-item__region">Herdade do Peso — Alentejo DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 35.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Conventual Reserva<span class="menu-item__region">Adega de Portalegre — Alentejo DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 40.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Pêra-Grave Reserva<span class="menu-item__region">Quinta S. José de Peramanca — Alentejo VR</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 65.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Espagne</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Faustino I — Gran Reserva<span class="menu-item__region">Bodegas Faustino — Rioja DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 49.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Marqués de Riscal Reserva<span class="menu-item__region">Marqués de Riscal — Rioja DOC</span><span class="menu-item__desc">75cl</span></span><span class="menu-item__price">CHF 49.–</span></div>
+        </div>
+
+        <div class="menu-course">
+          <div class="menu-course__title"><h3>Grand format Magnum</h3></div>
+          <div class="menu-item"><span class="menu-item__name">Herdade São Miguel Colheita Seleccionada<span class="menu-item__region">Herdade de São Miguel — Alentejo DOC</span><span class="menu-item__desc">150cl</span></span><span class="menu-item__price">CHF 75.–</span></div>
+          <div class="menu-item"><span class="menu-item__name">Pêra-Grave<span class="menu-item__region">Quinta S. José de Peramanca — Alentejo VR</span><span class="menu-item__desc">150cl</span></span><span class="menu-item__price">CHF 85.–</span></div>
+        </div>
+
+        <!-- TODO: seule la carte des vins rouges a été photographiée — ajouter blancs/rosés si disponibles -->
+        <p class="text-light" style="margin-top:0.75rem">Notre sélection de vins blancs et rosés est disponible sur demande auprès de notre équipe.</p>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+  <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
   <div class="container footer__grid">
     <div>
       <div class="footer__brand">
         <img src="/assets/logo-light.png" alt="">
-        <span>Restaurant Acacia</span>
+        <span>Charbonade Acacia</span>
       </div>
       <p style="color:rgba(255,255,255,.72)">Grillades et charbonnades généreuses, quartier Les Acacias, Genève.</p>
     </div>
@@ -203,7 +357,7 @@
     </div>
   </div>
   <div class="container footer__bottom cluster" style="justify-content:space-between">
-    <span>© 2026 Restaurant Acacia</span>
+    <span>© 2026 Charbonade Acacia</span>
     <span>Site par Arzabe Studio</span>
   </div>
 </footer>

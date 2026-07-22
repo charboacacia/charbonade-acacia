@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurant Acacia — Parrilladas & charbonnades en Ginebra</title>
-<meta name="description" content="Restaurant Acacia, grill y charbonnades en el corazón del barrio Les Acacias en Ginebra. Menú del día, reservas, ambiente cálido.">
+<title>Charbonade Acacia — Parrilladas & charbonnades en Ginebra</title>
+<meta name="description" content="Charbonade Acacia, grill y charbonnades en el corazón del barrio Les Acacias en Ginebra. Menú del día, reservas, ambiente cálido.">
 <link rel="icon" href="/assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,14 +45,20 @@
 <main>
 
   <section class="hero">
-    <div class="hero__media img-placeholder img-placeholder--hero" data-caption="Foto próximamente — fachada / sala del restaurante">
-      <svg class="motif" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+    <div class="hero__media">
+      <img src="/assets/images/pres-charbo.jpg" alt="Nuestra charbonade, brasas y parrillada preparada en la mesa" class="hero__photo">
     </div>
+    <div class="grill-lines" aria-hidden="true"></div>
+    <div class="ember-glow" aria-hidden="true"></div>
+    <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
     <div class="container hero__content reveal">
       <p class="eyebrow">Les Acacias, Ginebra</p>
-      <h1>Restaurant Acacia</h1>
+      <h1 class="hero__charbonade">
+        <span class="hero__charbonade-main">Charbon<em>ade</em><br>Acacia</span>
+        <span class="hero__charbonade-sub">Parrillada libre</span>
+      </h1>
       <!-- TODO: confirmar si Carolina y Gilberto quieren un eslogan diferente -->
-      <p class="hero__tagline">Charbonnades y parrilladas para compartir, en un ambiente familiar donde se toma el tiempo de comer bien.</p>
+      <p class="hero__tagline">Una mesa familiar donde se toma el tiempo de comer bien, alrededor del fuego.</p>
       <!-- /TODO -->
 
       <p class="status-badge" hidden
@@ -63,7 +69,7 @@
          data-template-closed-other="Cerrado, abre el {jour} a las {heure}"
          data-day-names='["domingo","lunes","martes","miércoles","jueves","viernes","sábado"]'></p>
       <div class="hero__actions">
-        <a href="/es/reserva.html" class="btn btn--accent">Reservar una mesa</a>
+        <a href="/es/reserva.html" class="btn btn--ember">Reservar una mesa</a>
         <a href="/es/menu.html" class="btn btn--outline">Ver el menú</a>
       </div>
     </div>
@@ -109,7 +115,8 @@
   </section>
 
   <section class="section section--dark">
-    <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+    <div class="section__media"><img src="/assets/images/terrasse-soir.jpg" alt=""></div>
+    <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
     <div class="container grid-2 grid-2--align-center">
       <div class="reveal">
         <p class="eyebrow">Información práctica</p>
@@ -130,12 +137,12 @@
 </main>
 
 <footer class="site-footer">
-  <svg class="motif motif--watermark" aria-hidden="true"><use href="#acacia-motif"></use></svg>
+  <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
   <div class="container footer__grid">
     <div>
       <div class="footer__brand">
         <img src="/assets/logo-light.png" alt="">
-        <span>Restaurant Acacia</span>
+        <span>Charbonade Acacia</span>
       </div>
       <p style="color:rgba(255,255,255,.72)">Parrilladas y charbonnades generosas, barrio Les Acacias, Ginebra.</p>
     </div>
@@ -158,7 +165,7 @@
     </div>
   </div>
   <div class="container footer__bottom cluster" style="justify-content:space-between">
-    <span>© 2026 Restaurant Acacia</span>
+    <span>© 2026 Charbonade Acacia</span>
     <span>Sitio por Arzabe Studio</span>
   </div>
 </footer>
