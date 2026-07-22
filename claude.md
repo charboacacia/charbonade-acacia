@@ -65,6 +65,11 @@ Structure des fichiers
 │   ├── menu.html        → Menú (ES)
 │   ├── reserva.html     → Reservas & Contacto (ES)
 │   └── historia.html    → Nuestra historia (ES)
+├── en/
+│   ├── index.html       → Home (EN)
+│   ├── menu.html        → Menu (EN)
+│   ├── reservation.html → Reservations & Contact (EN)
+│   └── story.html       → Our Story (EN)
 ├── css/
 │   └── style.css        → Feuille de style unique
 ├── js/
@@ -328,18 +333,27 @@ exceptionnelle est demandé par le client, éditer uniquement data/menus.json, a
 toucher.
 
 
-Système trilingue FR / ES / EN (EN à ajouter plus tard)
+Système trilingue FR / ES / EN — IMPLÉMENTÉ (juillet 2026)
 
 
 Version française à la racine /
 Version espagnole dans /es/
-Version anglaise dans /en/ — à construire une fois le contenu FR finalisé et confirmé par le
-client (nombreux clients anglophones du restaurant, demande explicite du client). Mécanique :
-copier une page FR, traduire, adapter les chemins — déjà mécanique grâce aux chemins
-root-relative utilisés partout (/css/style.css, /assets/..., etc.)
-Toggle FR | ES (| EN à venir) visible dans la navigation sur toutes les pages
+Version anglaise dans /en/ (index.html, menu.html, reservation.html, story.html) — construite
+en traduisant directement le contenu FR (source de vérité), chemins déjà root-relative donc
+aucun chemin à adapter (/css/style.css, /assets/..., etc. fonctionnent tels quels).
+Toggle FR | ES | EN visible dans la navigation sur toutes les pages (12 pages au total)
 Le toggle redirige vers la page équivalente dans l'autre langue (liens statiques, pas de JS)
 La langue active est indiquée visuellement (souligné + couleur accent)
+Onglets de carte (menu.html) : mêmes data-tab="repas/boissons/vins" en EN qu'en FR/ES (seuls
+les libellés visibles changent : Meals/Drinks/Wines), pour rester cohérent avec menu.js partagé
+Formulaire de réservation EN : Netlify Form séparé, name="booking" (pas "reservation", déjà pris
+par la version FR) avec champs traduits (firstname/lastname/email/date/time/guests/comments) —
+même logique que la séparation FR "reservation" / ES "reserva", pour ne pas mélanger les
+soumissions des différentes langues dans un même formulaire Netlify
+Seule donnée non traduite pour l'instant : le "menu du jour" (data/menus.json) reste en français
+uniquement (noms de plats) — à traduire une fois les 3 plats définitifs confirmés par Carolina
+& Gilberto à leur retour de vacances ; en attendant, le message "pas de menu du jour" (HTML,
+donc déjà traduit dans chaque langue) s'affiche à la place
 
 
 Menu du jour — logique JS (dans menu.js)
@@ -435,7 +449,8 @@ Horaires réels (23h30 vs minuit, 14h vs 15h le midi) — voir écart détaillé
 au retour de vacances des propriétaires
 Validation finale de la direction "Charbonade en avant" par Carolina & Gilberto (déjà en ligne
 sur master, implémentée sur la base de l'accord d'Adrien)
-Site en anglais (/en/), à construire une fois le contenu FR finalisé
+Traduction du menu du jour (data/menus.json) en anglais — en attente des 3 plats définitifs
+confirmés par Carolina & Gilberto (voir "Système trilingue")
 Propagation DNS + certificat SSL pour charbonade-acacia.ch (en cours, voir section Déploiement)
 Numéro de mobile pour vérification d'identité Infomaniak (bloquant ponctuellement une
 démarche administrative liée au domaine — sans lien avec le code du site)

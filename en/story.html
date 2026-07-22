@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Charbonade Acacia</title>
+<meta name="description" content="The story of the family behind Charbonade Acacia, grill and charbonnades in the heart of the Les Acacias neighbourhood in Geneva.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true" focusable="false">
+  <symbol id="acacia-motif" viewBox="0 0 240 150">
+    <path d="M12,72 C18,42 45,28 72,36 C88,14 132,14 150,34 C178,20 212,34 228,58 C234,68 226,78 210,74 C192,82 162,80 142,68 C112,82 72,82 50,70 C30,80 10,82 12,72 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M120,148 L120,110 M120,110 L98,66 M120,110 L142,66 M104,84 L88,60 M136,84 L152,60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__brand" href="/en/index.html">
+      <img src="/assets/logo.png" alt="Restaurant Acacia">
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__links" id="navLinks">
+      <a href="/en/index.html">Home</a>
+      <a href="/en/menu.html">Menu</a>
+      <a href="/en/reservation.html">Reservations</a>
+      <a href="/en/story.html" class="is-active">Our Story</a>
+      <div class="nav__lang">
+        <a href="/histoire.html">FR</a>
+        <span class="nav__lang-sep">|</span>
+        <a href="/es/historia.html">ES</a>
+        <span class="nav__lang-sep">|</span>
+        <a href="/en/story.html" class="is-active">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="section section--tight">
+    <div class="container section-head reveal">
+      <p class="eyebrow">Our story</p>
+      <h1>One family, two countries, one table</h1>
+      <p class="lede">From Bolivia to Geneva, Acacia's story is above all that of a family who chose to share their cooking the way you share your home.</p>
+    </div>
+  </section>
+
+  <!-- TODO: refine each part of the story with Carolina & Gilberto if needed (main tagline already validated) -->
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="story-beat reveal">
+        <div class="photo-frame">
+          <img src="/assets/images/restau-soir.jpg" alt="The restaurant's façade at night">
+        </div>
+        <div>
+          <p class="eyebrow">The arrival</p>
+          <h2>An opening in 2020, against all odds</h2>
+          <p>Carolina and Gilberto have lived in Geneva for many years. It was in 2020 that they finally opened their own restaurant — the year everything came to a halt. They held on, and they're still here today.</p>
+        </div>
+      </div>
+
+      <div class="story-beat story-beat--reverse reveal">
+        <div class="photo-frame">
+          <img src="/assets/images/charbonade.jpg" alt="The charbonade grill, meat and sauces ready at the table">
+        </div>
+        <div>
+          <p class="eyebrow">The house cooking</p>
+          <h2>Charbonnade, an idea that suits them</h2>
+          <p>No Bolivian menu here, but a generous grill built for gathering around the table. Charbonnade — all-you-can-eat grilled meat shared without counting — became the house signature: a way of making meals last that truly suits them.</p>
+        </div>
+      </div>
+
+      <div class="story-beat reveal">
+        <div class="photo-frame">
+          <img src="/assets/images/terrasse.jpg" alt="The restaurant's terrace during the day">
+        </div>
+        <div>
+          <p class="eyebrow">Les Acacias, a neighbourhood, a name</p>
+          <h2>A nice geographical coincidence</h2>
+          <p>The restaurant is named after the Geneva neighbourhood that hosts it, Les Acacias. A nod the family happily embraced: here too, they love places that take their time to grow and to welcome.</p>
+        </div>
+      </div>
+
+      <div class="story-beat story-beat--reverse reveal">
+        <div class="photo-frame">
+          <img src="/assets/images/table.jpg" alt="A table set and ready to welcome guests">
+        </div>
+        <div>
+          <p class="eyebrow">Today</p>
+          <h2>A table open to everyone</h2>
+          <p>Today, Acacia is a place people come to for a weekday lunch with colleagues just as much as for a family meal. The door stays open, and so does the table.</p>
+          <p style="margin-top:var(--space-3)"><a href="/en/reservation.html" class="btn btn--accent">Book a table</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /TODO -->
+
+</main>
+
+<footer class="site-footer">
+  <svg class="motif motif--watermark" aria-hidden="true" viewBox="0 0 240 150"><use href="#acacia-motif"></use></svg>
+  <div class="container footer__grid">
+    <div>
+      <div class="footer__brand">
+        <img src="/assets/logo-light.png" alt="">
+        <span>Charbonade Acacia</span>
+      </div>
+      <p style="color:rgba(255,255,255,.72)">Generous grilled meat and charbonnades, Les Acacias neighbourhood, Geneva.</p>
+    </div>
+    <div>
+      <p class="footer__title">Contact</p>
+      <div class="footer__list">
+        <span>Rue Caroline 17, 1227 Les Acacias, Geneva</span>
+        <a href="tel:+41223435454">022 343 54 54</a>
+        <!-- TODO: activate the real email link -->
+        <a href="#" class="is-placeholder" aria-disabled="true">contact@acacia-restaurant.ch (to be confirmed)</a>
+        <!-- /TODO -->
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">Hours</p>
+      <div class="footer__list">
+        <span>Mon, Thu, Fri, Sun: 11am–2pm &amp; 6pm–11:30pm</span>
+        <span>Tue, Wed, Sat: 6pm–11:30pm</span>
+      </div>
+    </div>
+  </div>
+  <div class="container footer__bottom cluster" style="justify-content:space-between">
+    <span>© 2026 Charbonade Acacia</span>
+    <span>Site by Arzabe Studio</span>
+  </div>
+</footer>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>
