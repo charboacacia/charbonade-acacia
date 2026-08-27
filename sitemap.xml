@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://charbonade-acacia.ch/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/es/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/en/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://charbonade-acacia.ch/menu.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/menu.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/es/menu.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/menu.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/en/menu.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/menu.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/menu.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://charbonade-acacia.ch/reservation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/reservation.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/reserva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/reservation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/reservation.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/es/reserva.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/reservation.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/reserva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/reservation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/reservation.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/en/reservation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/reservation.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/reserva.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/reservation.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/reservation.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://charbonade-acacia.ch/histoire.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/histoire.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/es/historia.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/histoire.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://charbonade-acacia.ch/en/story.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://charbonade-acacia.ch/histoire.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://charbonade-acacia.ch/es/historia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://charbonade-acacia.ch/en/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://charbonade-acacia.ch/histoire.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

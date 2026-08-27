@@ -1,9 +1,7 @@
 // Restaurant Acacia — comportements globaux (nav, reveal au scroll, lien WhatsApp, badge horaires)
 // Aucun texte visiteur n'est écrit ici : tout le texte vient du HTML ou du JSON.
 
-// TODO: remplacer par le vrai numéro WhatsApp Business du restaurant
-// (format international, chiffres uniquement, sans + ni espaces, ex: 41791234567)
-const WHATSAPP_NUMBER = '41000000000';
+const WHATSAPP_NUMBER = '41788312670';
 
 // Horaires d'ouverture par jour (0=dimanche..6=samedi), en heure Europe/Zurich.
 // Chaque créneau est [heure de début, heure de fin] en décimal (23.5 = 23h30).

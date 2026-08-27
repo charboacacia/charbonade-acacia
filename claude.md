@@ -293,17 +293,46 @@ Carte Google Maps intégrée (iframe)
 Note bien visible juste avant l'envoi : l'envoi du formulaire n'est PAS une confirmation —
 la confirmation arrive par email ou téléphone dans les prochaines heures
 
+Retour client (août 2026) sur le bloc "Réserver sur WhatsApp" : jugé trop imposant, un cadre qui
+"cassait" le design — grande carte blanche élevée (padding généreux, ombre, coins 16px, centrée)
+répétant le même message 3 fois (sous-titre de page, puis titre + texte + bouton + note dans la
+carte), et visuellement plus lourde que le vrai formulaire juste en dessous qui lui n'a aucun
+cadre. Trois pistes de recomposition proposées sous forme de maquettes (canvas de design) ;
+option retenue par Adrien : "Bandeau compact horizontal". Implémenté sur reservation.html,
+es/reserva.html et en/reservation.html — la classe .reservation-express garde son nom mais son
+CSS passe d'une carte centrée (var(--radius-lg), var(--space-4), box-shadow, text-align:center)
+à un bandeau discret sur une ligne (fond var(--color-primary-soft), var(--radius), padding
+0.9rem 1.25rem, flex avec justify-content:space-between). Le markup perd l'eyebrow, le h2 et la
+note dupliqués : il ne reste qu'une seule phrase courte + le bouton WhatsApp (taille standard,
+inchangée). Un seul rappel du message au lieu de trois.
+
 
 Notre histoire (histoire.html)
 
 
-Titre et accroche validés par le client, à garder tels quels : "Une famille, deux pays, une
-table" / "De la Bolivie à Genève, l'histoire d'Acacia est avant tout celle d'une famille qui a
-choisi de partager sa cuisine comme on partage sa maison."
+Titre validé par le client, à garder tel quel : "Une famille, deux pays, une table".
+Accroche revue (août 2026) : Carolina a compris la version originale ("...une famille qui a
+choisi de partager sa cuisine comme on partage sa maison") comme une promesse de cuisine
+bolivienne, contraire au positionnement du site. Remplacée par "...une famille qui a choisi de
+partager sa table comme on partage sa maison" (un seul mot changé, "cuisine" → "table", pour
+garder le rythme déjà validé) — même changement répercuté en ES ("su cocina" → "su mesa") et EN
+("their cooking" → "their table").
 Récit en 4 temps, mise en page alternée gauche/droite : L'arrivée → La cuisine de la maison
 (la charbonnade, pas une carte bolivienne) → Les Acacias, un quartier un nom → Aujourd'hui
 Identité bolivienne de la famille = récit personnel, jamais une promesse culinaire
-Photos ambiance (à venir)
+6 photos réelles (voir plus bas) ; alternance gauche/droite entre les 4 temps du récit
+
+Bug corrigé (août 2026) : l'alternance gauche/droite entre les 4 temps du récit n'a en réalité
+jamais fonctionné depuis son introduction. Le CSS définissait bien `.story-beat--reverse
+.story-beat__media { order: 2; }`, mais le HTML des 4 story-beat n'a jamais posé la classe
+`.story-beat__media` sur le wrapper de la photo (seul `.photo-frame` y était) — le sélecteur ne
+matchait donc jamais rien, et les 4 photos s'affichaient toutes du même côté (une colonne),
+malgré la classe `.story-beat--reverse` présente sur les beats 2 et 4. Corrigé en ajoutant
+`story-beat__media` à côté de `photo-frame` sur les 4 `<div>` photo des 3 langues
+(histoire.html, es/historia.html, en/story.html). Photos aussi mises à jour dans la foulée :
+assets/images/terrasse.png remplace terrasse.jpg (beat "Les Acacias"), assets/images/table.png
+remplace table.jpg (beat "Aujourd'hui") — les anciens .jpg restent dans le dossier, inutilisés,
+comme charbo.jpg.
 
 
 Badge horaires ouvert/fermé — logique JS (dans main.js)
@@ -383,6 +412,23 @@ javascript// Logique dans menu.js
 // 4. Sinon (mauvais jour OU après 14h00 OU fetch en échec) : afficher un message neutre déjà
 //    présent dans le HTML, la carte complète reste visible en dessous dans tous les cas
 
+SEO — IMPLÉMENTÉ (août 2026)
+
+Sur les 12 pages (FR/ES/EN) : balise canonical, balises hreflang (fr/es/en + x-default, chaque
+page pointe vers ses 3 équivalents + elle-même) pour que Google comprenne que ce sont des
+traductions et non du contenu dupliqué ; Open Graph + Twitter Card (titre, description, image,
+locale) pour un aperçu correct quand un lien du site est partagé (WhatsApp, Facebook, etc.) ;
+données structurées JSON-LD Restaurant (nom, adresse, téléphone, horaires, priceRange, lien vers
+le menu) identique sur chaque page, "@id" commun "https://charbonade-acacia.ch/#restaurant".
+robots.txt et sitemap.xml (multilingue, avec les mêmes alternates hreflang) créés à la racine.
+Rien de tout ça n'est visible sur le site (uniquement dans le <head>) et ça n'a aucun effet tant
+que la Production branch Netlify reste sur coming-soon.
+Horaires utilisés dans le JSON-LD : ceux actuellement affichés en ligne (23h30), pas ceux du
+classeur physique — cohérent avec la décision de ne pas changer tant que non confirmé (voir
+"Badge horaires" plus bas). priceRange estimé à "CHF 20-40" à partir des plats principaux de la
+carte, à ajuster si besoin.
+
+
 Netlify Forms — configuration
 
 html<!-- Formulaire réel (reservation.html), honeypot visuellement caché plutôt que type="hidden" -->
@@ -419,10 +465,14 @@ Texte "L'arrivée" de Notre histoire : la famille vit à Genève depuis longtemp
 ouvert en 2020 (a survécu au covid) — PAS de photos de Carolina/Gilberto sur le site (discrets),
 peu d'anecdotes disponibles au-delà de ce fait
 6 photos réelles intégrées (assets/images/) : pres-charbo.jpg (hero + carte Charbonnades),
-restau-soir.jpg, charbonade.jpg, terrasse.jpg, table.jpg (histoire), terrasse-soir.jpg (fond
-section horaires index). 3 photos reçues mais non utilisées pour l'instant : bar.jpg, soir.jpg
+restau-soir.jpg, charbonade.jpg, terrasse.png, table.png (histoire), terrasse-soir.jpg (fond
+section horaires index). terrasse.png et table.png remplacent depuis août 2026 les anciennes
+terrasse.jpg et table.jpg (nouvelles photos fournies par le client) — les .jpg restent dans le
+dossier, inutilisés. Photos reçues mais non utilisées pour l'instant : bar.jpg, soir.jpg
 (problèmes de cadrage/éclairage, voir conversation), charbo.jpg (retirée de "Notre carte
-complète" en juillet 2026 — créait trop de scroll avant les onglets, voir "Onglets de carte")
+complète" en juillet 2026 — créait trop de scroll avant les onglets, voir "Onglets de carte"),
+terrasse.jpg, table.jpg (anciennes versions, voir ci-dessus). menu1.jpg à menu5.jpg également
+reçues (août 2026), pas encore intégrées — destination à préciser avec Adrien.
 Carte complète (juillet 2026) transcrite depuis le classeur-menu physique pour Entrées,
 Charbonnades, Menu Enfant, Boissons (complet), Vins (rouge uniquement) — voir "Onglets de
 carte". Gambas/Poissons/Viandes/Pâtes reconstitués depuis une photo Google Maps récente (page
@@ -432,15 +482,24 @@ Nom de domaine, GitHub, Netlify créés et configurés (voir section Déploiemen
 Réservation hybride (formulaire Netlify Forms + CTA WhatsApp) validée
 Typographie Fraunces + Work Sans validée
 Direction "Charbonade en avant" implémentée (voir section dédiée)
+Numéro WhatsApp Business réel (+41 78 831 26 70, format international 41788312670 dans
+WHATSAPP_NUMBER, js/main.js) — remplace le placeholder 41000000000, août 2026
+Réseaux sociaux du footer (12 pages) : Instagram (instagram.com/restaurant_acacia) et Facebook
+(facebook.com/p/Restaurant-Acacia-100063478602699), ajoutés en icônes (.footer__social dans
+style.css) sous le pavé marque du footer, ouverture dans un nouvel onglet (target="_blank"
+rel="noopener")
 
 
 Encore à obtenir / en attente
 
 
-Email de contact du restaurant (le placeholder actuel "contact@acacia-restaurant.ch" ne
-correspond pas au vrai domaine charbonade-acacia.ch — à corriger dès qu'une vraie adresse
-existe)
-Numéro WhatsApp Business (placeholder dans js/main.js, WHATSAPP_NUMBER)
+Email de contact du restaurant : adresse décidée avec Adrien (août 2026) — ce sera
+contact@charbonade-acacia.ch (voir recommandation ci-dessus : plus polyvalent que
+"reservations@", plus chaleureux qu'"info@"). Boîte pas encore créée par Adrien ("dans un
+moment") — le placeholder du footer (12 pages) affiche déjà la bonne adresse mais reste
+désactivé avec la mention "(bientôt disponible)"/"(próximamente)"/"(coming soon)" ; à activer
+en vrai lien mailto: dès que la boîte existe réellement (retirer class="is-placeholder"
+aria-disabled="true" et la mention entre parenthèses, ajouter href="mailto:...").
 Confirmation finale des 3 plats du jour (lundi/jeudi/vendredi) dans data/menus.json — toujours
 provisoires
 Reconfirmation de Gambas/Poissons/Viandes/Pâtes (source Google Maps, pas le classeur physique)
