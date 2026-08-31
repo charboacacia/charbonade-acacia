@@ -46,10 +46,10 @@ async function loadMenuDuJour() {
     const list = container.querySelector('[data-menu-preview-list], [data-menu-full-list]');
     const empty = container.querySelector('[data-menu-preview-empty], [data-menu-full-empty]');
     // Sans menu du jour, la section ne contient qu'une phrase : elle n'a pas besoin du
-    // même gabarit (padding, marge sous le titre) que lorsque les 3 plats sont affichés.
+    // même gabarit (padding, marge sous le titre) que lorsque les 2 plats sont affichés.
     const wrapper = container.closest('section');
 
-    if (plats.length === 3) {
+    if (plats.length === 2) {
       if (list) {
         list.hidden = false;
         plats.forEach((plat, index) => {

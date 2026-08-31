@@ -162,6 +162,30 @@ position:relative; z-index:1; } pour toute future section utilisant .section__me
 tester un chargement FRAIS sans scroll après toute modification impliquant .hero__media ou
 .section__media — un test avec scroll-through peut masquer ce genre de régression.
 
+Couleur changée (août 2026, validé par Carolina) : "ADE" (dans "Charbonade") et le bouton hero
+"Réserver une table" (.btn--ember) sont passés du braise (#C1401A) à un vert (#4C9A3B), à la
+demande d'Adrien/Carolina — le vert primaire #2D5A27 essayé en premier était trop sombre pour
+rester lisible sur la photo du hero (retour visuel : "un peu plus visible ?"). 4 pistes montrées
+sur une page de comparaison (screenshots réels sur la vraie photo, pas des maquettes) : vert vif
+seul, vert d'origine + contour, vert vif + contour, vert vif + ombre portée. Option retenue :
+vert vif + fin contour clair. Implémentation : --color-ember passe à #4C9A3B dans :root, et
+.hero__charbonade-main em reçoit -webkit-text-stroke: 1px rgba(245,239,224,0.9) + paint-order:
+stroke fill (le contour n'est posé que sur "ADE", pas sur le bouton — un bouton plein n'en a pas
+besoin). --color-ember-soft (le halo .ember-glow en bas du hero) n'a PAS été touché — il reste
+orange/braise, volontairement, cette question reste ouverte avec Adrien. Ancienne couleur
+braise #C1401A gardée ici au cas où il faudrait revenir en arrière (il suffit de la remettre sur
+--color-ember et de retirer le -webkit-text-stroke).
+
+Question posée puis tranchée (août 2026) : Adrien a proposé d'étendre ce même vert à toute la
+palette d'accent du site (--color-accent, actuellement la terracotta #C4783A — utilisée pour les
+eyebrows, boutons secondaires, prix de la carte, hover, le toggle de langue, le séparateur
+acacia...). Comparatif réel montré (terracotta vs vert) sur 5 endroits du site + avis donné :
+garder la terracotta comme accent principal, réserver le vert au moment "Charbonade" du hero
+uniquement — la terracotta évoque la braise/viande grillée (plus cohérent avec un grill), et
+avec deux verts sur la page les accents se détacheraient moins bien du reste. Décision confirmée
+par Adrien : on garde --color-accent en terracotta. Ne pas reproposer ce changement sauf si le
+client en reparle lui-même.
+
 
 Design — principes généraux
 
@@ -188,7 +212,7 @@ Hero : grande photo + nom du restaurant + tagline (voir direction "Charbonade en
 ci-dessus pour l'évolution en attente de validation)
 Badge horaires ouvert/fermé en temps réel sous le tagline (voir logique JS plus bas)
 Présentation courte du restaurant (2-3 phrases)
-Aperçu du menu du jour (les 3 plats du jour actuel, nom + prix chacun)
+Aperçu du menu du jour (les 2 plats du jour actuel, nom + prix chacun)
 Section horaires + adresse + lien Google Maps
 CTA : bouton réservation
 
@@ -322,6 +346,14 @@ Récit en 4 temps, mise en page alternée gauche/droite : L'arrivée → La cuis
 Identité bolivienne de la famille = récit personnel, jamais une promesse culinaire
 6 photos réelles (voir plus bas) ; alternance gauche/droite entre les 4 temps du récit
 
+Anecdote personnelle ajoutée (août 2026) au beat "Les Acacias, un quartier, un nom" (le h2 "Un
+joli hasard de géographie" reste inchangé, validé par le client) : Carolina et Gilberto vivent
+dans le quartier depuis vingt ans, et Gilberto a travaillé juste en face du restaurant actuel,
+chez Olympico (la churrascaria citée ailleurs dans ce document comme concurrent, à propos du
+"mur de texte" de sa carte — coïncidence amusante, c'est là qu'il a fait ses débuts), avant
+d'ouvrir sa propre adresse. Ajouté en FR/ES/EN dans le paragraphe du beat, sans toucher au récit
+des 3 autres temps.
+
 Bug corrigé (août 2026) : l'alternance gauche/droite entre les 4 temps du récit n'a en réalité
 jamais fonctionné depuis son introduction. Le CSS définissait bien `.story-beat--reverse
 .story-beat__media { order: 2; }`, mais le HTML des 4 story-beat n'a jamais posé la classe
@@ -380,27 +412,38 @@ par la version FR) avec champs traduits (firstname/lastname/email/date/time/gues
 même logique que la séparation FR "reservation" / ES "reserva", pour ne pas mélanger les
 soumissions des différentes langues dans un même formulaire Netlify
 Seule donnée non traduite pour l'instant : le "menu du jour" (data/menus.json) reste en français
-uniquement (noms de plats) — à traduire une fois les 3 plats définitifs confirmés par Carolina
-& Gilberto à leur retour de vacances ; en attendant, le message "pas de menu du jour" (HTML,
-donc déjà traduit dans chaque langue) s'affiche à la place
+uniquement (noms de plats) — à traduire une fois le prix du cordon bleu de porc confirmé (voir
+"Menu du jour" ci-dessous) ; en attendant, le message "pas de menu du jour" (HTML, donc déjà
+traduit dans chaque langue) s'affiche à la place
 
 
 Menu du jour — logique JS (dans menu.js)
 
 Le "menu du jour" n'est PAS un menu 3 services (entrée/plat/dessert) à un prix fixe : ce sont
-3 plats différents au choix, chacun avec son propre prix (conforme aux ardoises réelles du
-restaurant). Servi uniquement le midi (lundi, jeudi, vendredi) et disparaît automatiquement à
-14h00 heure de Genève (Europe/Zurich) — après quoi la carte complète (toujours affichée en bas
-de menu.html, valable tous les jours d'ouverture) prend le relais jusqu'au prochain jour
-concerné. Réutilisé sur index.html pour l'aperçu (feature-detection data-menu-preview vs
-data-menu-full, un seul fichier JS).
+2 plats différents au choix (changé de 3 à 2 en août 2026, confirmé par le client — grid-3
+devient grid-2 dans index.html/menu.html × 3 langues, et menu.js vérifie plats.length === 2),
+chacun avec son propre prix (conforme aux ardoises réelles du restaurant). Servi uniquement le
+midi (lundi, jeudi, vendredi) et disparaît automatiquement à 14h00 heure de Genève
+(Europe/Zurich) — après quoi la carte complète (toujours affichée en bas de menu.html, valable
+tous les jours d'ouverture) prend le relais jusqu'au prochain jour concerné. Réutilisé sur
+index.html pour l'aperçu (feature-detection data-menu-preview vs data-menu-full, un seul
+fichier JS).
+
+Plats confirmés par Adrien (août 2026) : lundi = Bitoque de bœuf + Cordon bleu de porc, jeudi =
+Entrecôte parisienne de bœuf + Lomo saltado, vendredi = Filets de perche + Picanha grillée. Prix
+repris de la carte complète/de l'ancien menu.json pour tous les plats déjà présents ailleurs sur
+le site (mêmes noms) ; seul le cordon bleu de porc est un plat inédit, sans prix de référence —
+"prix": "à confirmer" en attendant, affiché tel quel sur la carte si consulté avant confirmation
+(pas grave tant que la Production branch Netlify reste sur coming-soon). Le menu du lundi change
+environ tous les 15 jours à la discrétion de Carolina & Gilberto ; jeudi et vendredi sont plus
+stables. Adrien préviendra à chaque changement — éditer uniquement data/menus.json.
 
 json// data/menus.json — structure actuelle
 {
-  "_todo": "Confirmer les plats du jour exacts avec Carolina & Gilberto",
+  "_todo": "Prix du cordon bleu de porc (lundi) à confirmer avec Carolina & Gilberto",
   "_todo_fermetures": "Ajouter ici chaque date de fermeture exceptionnelle (jour férié)",
   "fermetures_exceptionnelles": [],
-  "lundi": { "plats": [ { "nom": "...", "prix": "..." }, ... 3 plats ... ] },
+  "lundi": { "plats": [ { "nom": "...", "prix": "..." }, ... 2 plats ... ] },
   "jeudi": { "plats": [ ... ] },
   "vendredi": { "plats": [ ... ] }
 }
@@ -408,7 +451,7 @@ json// data/menus.json — structure actuelle
 javascript// Logique dans menu.js
 // 1. Récupérer le jour actuel ET l'heure, en heure Europe/Zurich (Intl.DateTimeFormat)
 // 2. Fetch menus.json
-// 3. Si jour servi ET heure < 14h00 : afficher les 3 plats (nom + prix) du jour
+// 3. Si jour servi ET heure < 14h00 : afficher les 2 plats (nom + prix) du jour
 // 4. Sinon (mauvais jour OU après 14h00 OU fetch en échec) : afficher un message neutre déjà
 //    présent dans le HTML, la carte complète reste visible en dessous dans tous les cas
 
@@ -493,23 +536,16 @@ rel="noopener")
 Encore à obtenir / en attente
 
 
-Email de contact du restaurant : adresse décidée avec Adrien (août 2026) — ce sera
-contact@charbonade-acacia.ch (voir recommandation ci-dessus : plus polyvalent que
-"reservations@", plus chaleureux qu'"info@"). Boîte pas encore créée par Adrien ("dans un
-moment") — le placeholder du footer (12 pages) affiche déjà la bonne adresse mais reste
-désactivé avec la mention "(bientôt disponible)"/"(próximamente)"/"(coming soon)" ; à activer
-en vrai lien mailto: dès que la boîte existe réellement (retirer class="is-placeholder"
-aria-disabled="true" et la mention entre parenthèses, ajouter href="mailto:...").
-Confirmation finale des 3 plats du jour (lundi/jeudi/vendredi) dans data/menus.json — toujours
-provisoires
+Prix du cordon bleu de porc (menu du jour, lundi) — seul plat sans référence de prix ailleurs
+sur le site, "prix": "à confirmer" en attendant dans data/menus.json
 Reconfirmation de Gambas/Poissons/Viandes/Pâtes (source Google Maps, pas le classeur physique)
 et des vins blancs/rosés (seule la carte des rouges a été photographiée)
 Horaires réels (23h30 vs minuit, 14h vs 15h le midi) — voir écart détaillé ci-dessus, à trancher
 au retour de vacances des propriétaires
 Validation finale de la direction "Charbonade en avant" par Carolina & Gilberto (déjà en ligne
 sur master, implémentée sur la base de l'accord d'Adrien)
-Traduction du menu du jour (data/menus.json) en anglais — en attente des 3 plats définitifs
-confirmés par Carolina & Gilberto (voir "Système trilingue")
+Traduction du menu du jour (data/menus.json) en anglais — en attente du prix du cordon bleu de
+porc (voir "Système trilingue")
 Propagation DNS + certificat SSL pour charbonade-acacia.ch (en cours, voir section Déploiement)
 Numéro de mobile pour vérification d'identité Infomaniak (bloquant ponctuellement une
 démarche administrative liée au domaine — sans lien avec le code du site)

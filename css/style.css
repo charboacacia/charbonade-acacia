@@ -11,7 +11,7 @@
   --color-primary-soft: rgba(45, 90, 39, 0.14);
   --color-accent:       #C4783A;
   --color-accent-soft:  rgba(196, 120, 58, 0.16);
-  --color-ember:        #C1401A;
+  --color-ember:        #4C9A3B; /* vert (août 2026, validé par Carolina) à la place de la braise d'origine #C1401A, sur "ADE" + bouton hero uniquement */
   --color-ember-soft:   rgba(193, 64, 26, 0.18);
   --color-bg:           #F5EFE0;
   --color-bg-dark:      #1C1C1C;
@@ -342,7 +342,12 @@ p { color: var(--color-text); }
   letter-spacing: -0.01em;
   color: var(--color-white);
 }
-.hero__charbonade-main em { font-style: normal; color: var(--color-ember); }
+.hero__charbonade-main em {
+  font-style: normal;
+  color: var(--color-ember);
+  -webkit-text-stroke: 1px rgba(245, 239, 224, 0.9);
+  paint-order: stroke fill;
+}
 .hero__charbonade-sub {
   display: block;
   font-family: var(--font-body);

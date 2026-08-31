@@ -1,26 +1,24 @@
 {
-  "_todo": "Confirmer les 3 plats du jour exacts (et leurs prix) avec Carolina et Gilberto. Le jeudi ci-dessous est une estimation provisoire construite à partir de la carte, pas encore confirmée.",
+  "_todo": "Prix du cordon bleu de porc (lundi) à confirmer avec Carolina & Gilberto.",
   "_todo_fermetures": "Ajouter ici chaque date (format AAAA-MM-JJ, heure de Genève) où le restaurant ferme exceptionnellement pour un jour férié.",
   "fermetures_exceptionnelles": [],
   "lundi": {
+    "_note": "Change environ tous les 15 jours à la discrétion de Carolina & Gilberto — Adrien préviendra quand il faut mettre à jour ces 2 plats.",
     "plats": [
-      { "nom": "Parisienne de bœuf, café de Paris, frites", "prix": "22.-" },
-      { "nom": "Lomo saltado, riz et frites", "prix": "21.-" },
-      { "nom": "Tagliatelle aux crevettes", "prix": "19.-" }
+      { "nom": "Bitoque de bœuf, riz et frites", "prix": "20.-" },
+      { "nom": "Cordon bleu de porc, frites", "prix": "à confirmer" }
     ]
   },
   "jeudi": {
     "plats": [
-      { "nom": "Bitoque de bœuf, riz et frites", "prix": "20.-" },
-      { "nom": "Filets de perche, sauce tartare, frites-légumes", "prix": "22.-" },
-      { "nom": "Tagliatelle aux morilles", "prix": "19.-" }
+      { "nom": "Entrecôte parisienne de bœuf, frites", "prix": "22.-" },
+      { "nom": "Lomo saltado, riz et frites", "prix": "21.-" }
     ]
   },
   "vendredi": {
     "plats": [
       { "nom": "Filets de perche, sauce tartare, frites-légumes", "prix": "22.-" },
-      { "nom": "Picanha grillée, frites", "prix": "25.-" },
-      { "nom": "Penne carbonara", "prix": "18.-" }
+      { "nom": "Picanha grillée, frites", "prix": "25.-" }
     ]
   }
 }
