@@ -180,7 +180,11 @@ seul, vert d'origine + contour, vert vif + contour, vert vif + ombre portée. Op
 vert vif + fin contour clair. Implémentation : --color-ember passe à #4C9A3B dans :root, et
 .hero__charbonade-main em reçoit -webkit-text-stroke: 1px rgba(245,239,224,0.9) + paint-order:
 stroke fill (le contour n'est posé que sur "ADE", pas sur le bouton — un bouton plein n'en a pas
-besoin). --color-ember-soft (le halo .ember-glow en bas du hero) n'a PAS été touché — il reste
+besoin). Retouche (septembre 2026) : le mot coloré n'est plus "ade" dans "Charbonade" mais tout
+le mot "Acacia" sur la 2e ligne — markup passé de `Charbon<em>ade</em><br>Acacia` à
+`Charbonade<br><em>Acacia</em>` (index.html/es/index.html/en/index.html), le CSS de l'em (couleur
++ contour) n'a pas changé, juste ce qu'il entoure. "Charbonade" est donc entièrement blanc,
+"Acacia" entièrement vert avec le contour. --color-ember-soft (le halo .ember-glow en bas du hero) n'a PAS été touché — il reste
 orange/braise, volontairement, cette question reste ouverte avec Adrien. Ancienne couleur
 braise #C1401A gardée ici au cas où il faudrait revenir en arrière (il suffit de la remettre sur
 --color-ember et de retirer le -webkit-text-stroke).
