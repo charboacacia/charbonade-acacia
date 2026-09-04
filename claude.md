@@ -41,16 +41,25 @@ Site Netlify : "charbonade-acacia" (équipe "Charbonade Acacia"), URL temporaire
   donc c'est la page "en construction" qui est visible publiquement pour l'instant, pas le
   vrai site. Pour lancer le vrai site : changer la Production branch sur Netlify de
   coming-soon vers master (aucun fichier à déplacer).
+Branch deploys réglé sur "All" (septembre 2026, activé pour donner à Carolina & Gilberto un
+  lien de prévisualisation du vrai site sans toucher à coming-soon). Lien stable qui se met à
+  jour à chaque push sur master : https://master--charbonade-acacia.netlify.app/ — envoyé par
+  SMS aux propriétaires. Important : ce compte Netlify CLI local (a-am86) n'a PAS accès à ce
+  site — il vit sous un compte/équipe différent, seul le dashboard web d'Adrien y a accès.
+  Attention aux crédits de build Netlify : chaque push sur GitHub (n'importe quelle branche)
+  déclenche un build. Le client a demandé (septembre 2026) de NE PLUS pousser automatiquement
+  à chaque petite modif — on commit en local à chaque changement, et on ne pousse que sur
+  demande explicite, pour regrouper plusieurs changements en un seul push/build.
 Nom de domaine : charbonade-acacia.ch, acheté et enregistré chez Infomaniak au nom de
   Gilberto Cespedes Vargas / 3J'S SARL. Ajouté côté Netlify comme domaine personnalisé
   (primary domain) + www.charbonade-acacia.ch en alias. Configuration DNS ajoutée chez
   Infomaniak (zone DNS du domaine) :
     charbonade-acacia.ch       A      75.2.60.5
     www.charbonade-acacia.ch   CNAME  charbonade-acacia.netlify.app
-  En attente de propagation DNS + certificat SSL Let's Encrypt automatique (peut prendre de
-  quelques minutes à ~24h). Ne pas utiliser "Netlify DNS" (délégation des serveurs de noms) —
-  on garde la gestion DNS chez Infomaniak pour ne pas compliquer une éventuelle adresse email
-  @charbonade-acacia.ch plus tard.
+  DNS propagé et certificat SSL Let's Encrypt actif (vérifié septembre 2026) : https://
+  charbonade-acacia.ch/ répond en HTTPS, sert bien la page coming-soon. Ne pas utiliser
+  "Netlify DNS" (délégation des serveurs de noms) — on garde la gestion DNS chez Infomaniak,
+  ce qui a permis de créer l'adresse email @charbonade-acacia.ch (voir plus bas).
 
 
 Structure des fichiers
@@ -561,6 +570,5 @@ Validation finale de la direction "Charbonade en avant" par Carolina & Gilberto 
 sur master, implémentée sur la base de l'accord d'Adrien)
 Traduction du menu du jour (data/menus.json) en anglais — en attente du prix du cordon bleu de
 porc (voir "Système trilingue")
-Propagation DNS + certificat SSL pour charbonade-acacia.ch (en cours, voir section Déploiement)
 Numéro de mobile pour vérification d'identité Infomaniak (bloquant ponctuellement une
 démarche administrative liée au domaine — sans lien avec le code du site)
