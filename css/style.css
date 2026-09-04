@@ -416,9 +416,9 @@ p { color: var(--color-text); }
 
 /* 5.4 — Cartes ------------------------------------------------ */
 .card {
-  background: var(--color-white);
+  background: rgba(28, 28, 28, 0.03);
+  border: 1px solid rgba(28, 28, 28, 0.08);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
   padding: var(--space-3);
   transition: transform var(--transition), box-shadow var(--transition);
 }

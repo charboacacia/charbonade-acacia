@@ -303,6 +303,18 @@ plutôt que la renforcer) — gardée uniquement la phrase de présentation de l
 garder les 3 onglets visuellement cohérents (texte + prix, rien d'autre) tout en distinguant un
 peu la spécialité. pres-charbo.jpg reste utilisée uniquement dans le hero (index.html/es/index.html).
 
+Retour client (septembre 2026) sur les cartes du menu du jour (.card, dish-card__name/price,
+utilisées sur l'aperçu accueil ET la section "Aujourd'hui" de menu.html) : seul endroit du site
+encore en carte blanche pleine (background: var(--color-white) + box-shadow), alors que le reste
+du site a évolué vers des surfaces teintées ou du texte à plat sur le crème (carte complète en
+.menu-item sans fond, bandeau .reservation-express teinté) — ça "cassait" le design. 3 pistes
+comparées (captures réelles) : sans carte du tout (comme .menu-item), carte teintée terracotta
+(mais le prix, déjà terracotta, s'y détache moins bien), carte discrète (fond gris-crème très
+subtil rgba(28,28,28,0.03) + fine bordure rgba(28,28,28,0.08) au lieu de l'ombre). Option retenue
+par Adrien : la carte discrète — garde l'effet "carte" (utile pour mettre en avant le côté
+"aujourd'hui") sans le blanc qui tranche. .card garde son ombre (--shadow-soft-lg) au survol
+uniquement, plus au repos.
+
 
 Réservations & Contact (reservation.html)
 
@@ -348,11 +360,14 @@ Identité bolivienne de la famille = récit personnel, jamais une promesse culin
 
 Anecdote personnelle ajoutée (août 2026) au beat "Les Acacias, un quartier, un nom" (le h2 "Un
 joli hasard de géographie" reste inchangé, validé par le client) : Carolina et Gilberto vivent
-dans le quartier depuis vingt ans, et Gilberto a travaillé juste en face du restaurant actuel,
-chez Olympico (la churrascaria citée ailleurs dans ce document comme concurrent, à propos du
-"mur de texte" de sa carte — coïncidence amusante, c'est là qu'il a fait ses débuts), avant
-d'ouvrir sa propre adresse. Ajouté en FR/ES/EN dans le paragraphe du beat, sans toucher au récit
-des 3 autres temps.
+dans le quartier depuis vingt ans, toujours restés fidèles à ce coin de Genève. Ajouté en
+FR/ES/EN dans le paragraphe du beat, sans toucher au récit des 3 autres temps.
+
+Retiré (septembre 2026, à la demande d'Adrien) : la mention que Gilberto avait travaillé chez
+Olympico (la churrascaria citée ailleurs dans ce document comme concurrent, à propos du "mur de
+texte" de sa carte) juste en face avant d'ouvrir sa propre adresse. Cette phrase a été retirée du
+paragraphe dans les 3 langues — le reste de l'anecdote (les vingt ans dans le quartier, la
+conclusion "chez eux") reste inchangé.
 
 Bug corrigé (août 2026) : l'alternance gauche/droite entre les 4 temps du récit n'a en réalité
 jamais fonctionné depuis son introduction. Le CSS définissait bien `.story-beat--reverse
