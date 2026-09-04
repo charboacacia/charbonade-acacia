@@ -532,6 +532,17 @@ html<!-- Formulaire réel (reservation.html), honeypot visuellement caché plut�
   <!-- champs du formulaire, email obligatoire -->
 </form>
 
+Activation réelle sur Netlify (septembre 2026) : la détection de formulaires n'était PAS activée
+côté Netlify malgré le bon code HTML — aucun des 3 formulaires (reservation/reserva/booking)
+n'était donc réellement fonctionnel jusque-là. Corrigé en 3 étapes dans le dashboard Netlify
+(Forms → "Enable form detection", puis un redeploy de master sans cache pour que le HTML déjà
+déployé soit scanné, puis Project configuration → Notifications → Emails and webhooks → "Form
+submission notifications" → email vers contact@charbonade-acacia.ch sur "Any form", ce qui
+couvre les 3 formulaires en un seul réglage). Les 3 formulaires apparaissent maintenant comme
+"Active forms" dans l'onglet Forms. À garder en tête : si le formulaire est un jour dupliqué
+pour une nouvelle langue ou une nouvelle page, il faudra un nouveau déploiement de master pour
+que Netlify le détecte (la détection ne scanne pas rétroactivement les anciens déploiements).
+
 Ce qu'il ne faut JAMAIS faire
 
 
