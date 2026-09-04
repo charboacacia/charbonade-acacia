@@ -328,6 +328,20 @@ par Adrien : la carte discrète — garde l'effet "carte" (utile pour mettre en 
 "aujourd'hui") sans le blanc qui tranche. .card garde son ombre (--shadow-soft-lg) au survol
 uniquement, plus au repos.
 
+Boutons "Réserver une table" passés en vert (septembre 2026) : les 9 occurrences hors hero
+(index/menu/histoire × FR/ES/EN — section horaires, bas de la carte complète, fin du beat
+"Aujourd'hui") sont passées de .btn--accent (terracotta) à .btn--ember (vert), pour matcher le
+bouton du hero. Seul le CSS de .btn--ember a servi, aucune nouvelle classe créée. --color-accent
+(terracotta) reste utilisé ailleurs (prix, eyebrows, séparateur, langue — voir décision "tout en
+vert" plus haut, qui ne concernait pas les boutons de réservation).
+
+Note "cuisine" ajoutée sous les horaires (septembre 2026), sur index.html et reservation.html
+(× FR/ES/EN, 6 fichiers) : phrase discrète (rgba(255,255,255,.72), 0.9rem) juste après le
+tableau d'horaires — "La cuisine ferme à 14h le midi et à 22h le soir." (traduite en ES/EN). Le
+restaurant/bar reste ouvert jusqu'à 23h30, mais la cuisine s'arrête plus tôt — distinction que
+les horaires affichés ne rendaient pas. Pas ajoutée au footer (résumé plus court) ni au JSON-LD
+(qui ne modélise que les horaires d'ouverture générale, pas les horaires de cuisine).
+
 
 Réservations & Contact (reservation.html)
 
