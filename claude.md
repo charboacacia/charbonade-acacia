@@ -480,6 +480,15 @@ le site (mêmes noms) ; seul le cordon bleu de porc est un plat inédit, sans pr
 environ tous les 15 jours à la discrétion de Carolina & Gilberto ; jeudi et vendredi sont plus
 stables. Adrien préviendra à chaque changement — éditer uniquement data/menus.json.
 
+Prix retirés de l'affichage (septembre 2026, décision d'Adrien) : le menu du jour montre
+uniquement le nom des plats, plus le prix — sur l'aperçu accueil ET la section "Aujourd'hui" de
+menu.html. Les éléments <p class="dish-card__price" data-plat-prix="N"> ont été retirés du HTML
+(6 fichiers : index/menu × FR/ES/EN), et menu.js ne cherche/n'affiche plus prixField. La donnée
+"prix" reste dans data/menus.json (inutilisée pour l'instant, gardée au cas où) — inutile de la
+retirer du JSON, et le "prix": "à confirmer" du cordon bleu de porc n'est donc plus bloquant
+pour rien (ni l'affichage, ni la traduction EN du menu du jour, qui n'a plus que des noms de
+plats à traduire).
+
 json// data/menus.json — structure actuelle
 {
   "_todo": "Prix du cordon bleu de porc (lundi) à confirmer avec Carolina & Gilberto",
@@ -493,7 +502,7 @@ json// data/menus.json — structure actuelle
 javascript// Logique dans menu.js
 // 1. Récupérer le jour actuel ET l'heure, en heure Europe/Zurich (Intl.DateTimeFormat)
 // 2. Fetch menus.json
-// 3. Si jour servi ET heure < 14h00 : afficher les 2 plats (nom + prix) du jour
+// 3. Si jour servi ET heure < 14h00 : afficher les 2 plats (nom seul, plus de prix) du jour
 // 4. Sinon (mauvais jour OU après 14h00 OU fetch en échec) : afficher un message neutre déjà
 //    présent dans le HTML, la carte complète reste visible en dessous dans tous les cas
 
@@ -578,15 +587,13 @@ rel="noopener")
 Encore à obtenir / en attente
 
 
-Prix du cordon bleu de porc (menu du jour, lundi) — seul plat sans référence de prix ailleurs
-sur le site, "prix": "à confirmer" en attendant dans data/menus.json
 Reconfirmation de Gambas/Poissons/Viandes/Pâtes (source Google Maps, pas le classeur physique)
 et des vins blancs/rosés (seule la carte des rouges a été photographiée)
 Horaires réels (23h30 vs minuit, 14h vs 15h le midi) — voir écart détaillé ci-dessus, à trancher
 au retour de vacances des propriétaires
 Validation finale de la direction "Charbonade en avant" par Carolina & Gilberto (déjà en ligne
 sur master, implémentée sur la base de l'accord d'Adrien)
-Traduction du menu du jour (data/menus.json) en anglais — en attente du prix du cordon bleu de
-porc (voir "Système trilingue")
+Traduction du menu du jour (data/menus.json) en anglais — les prix ne s'affichant plus (voir
+"Menu du jour"), il ne reste que les noms de plats à traduire, plus simple qu'avant
 Numéro de mobile pour vérification d'identité Infomaniak (bloquant ponctuellement une
 démarche administrative liée au domaine — sans lien avec le code du site)

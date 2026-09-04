@@ -54,9 +54,7 @@ async function loadMenuDuJour() {
         list.hidden = false;
         plats.forEach((plat, index) => {
           const nomField = list.querySelector(`[data-plat-nom="${index}"]`);
-          const prixField = list.querySelector(`[data-plat-prix="${index}"]`);
           if (nomField && plat.nom) nomField.textContent = plat.nom;
-          if (prixField && plat.prix) prixField.textContent = plat.prix;
         });
       }
       if (empty) empty.hidden = true;
