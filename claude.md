@@ -36,11 +36,13 @@ Stratégie de branches :
   - master = le vrai site complet (tout ce document décrit cette branche)
   - coming-soon = une page unique "site en construction" (logo + adresse + téléphone réels,
     rien du contenu provisoire exposé), volontairement déconnectée du reste du site
+SITE EN LIGNE depuis le 7 septembre 2026 : Production branch changée de coming-soon vers master
+  sur Netlify (fait par Adrien dans le dashboard — le champ était un texte libre, pas une liste
+  déroulante, "master" tapé à la main). charbonade-acacia.ch sert désormais le vrai site à tout
+  le monde. coming-soon reste dans le dépôt (branche toujours là, juste plus utilisée comme
+  Production) au cas où il faudrait revenir en arrière rapidement.
 Site Netlify : "charbonade-acacia" (équipe "Charbonade Acacia"), URL temporaire
-  https://charbonade-acacia.netlify.app — actuellement en Production branch = coming-soon,
-  donc c'est la page "en construction" qui est visible publiquement pour l'instant, pas le
-  vrai site. Pour lancer le vrai site : changer la Production branch sur Netlify de
-  coming-soon vers master (aucun fichier à déplacer).
+  https://charbonade-acacia.netlify.app (sert maintenant le vrai site aussi, comme le domaine).
 Branch deploys réglé sur "All" (septembre 2026, activé pour donner à Carolina & Gilberto un
   lien de prévisualisation du vrai site sans toucher à coming-soon). Lien stable qui se met à
   jour à chaque push sur master : https://master--charbonade-acacia.netlify.app/ — envoyé par
@@ -515,12 +517,25 @@ locale) pour un aperçu correct quand un lien du site est partagé (WhatsApp, Fa
 données structurées JSON-LD Restaurant (nom, adresse, téléphone, horaires, priceRange, lien vers
 le menu) identique sur chaque page, "@id" commun "https://charbonade-acacia.ch/#restaurant".
 robots.txt et sitemap.xml (multilingue, avec les mêmes alternates hreflang) créés à la racine.
-Rien de tout ça n'est visible sur le site (uniquement dans le <head>) et ça n'a aucun effet tant
-que la Production branch Netlify reste sur coming-soon.
+Rien de tout ça n'est visible sur le site (uniquement dans le <head>).
 Horaires utilisés dans le JSON-LD : ceux actuellement affichés en ligne (23h30), pas ceux du
 classeur physique — cohérent avec la décision de ne pas changer tant que non confirmé (voir
 "Badge horaires" plus bas). priceRange estimé à "CHF 20-40" à partir des plats principaux de la
 carte, à ajuster si besoin.
+
+Google Search Console — CONFIGURÉ (septembre 2026, sous le compte Google personnel d'Adrien,
+même compte qu'arzabe-studio.ch ; Carolina/Gilberto peuvent être ajoutés comme utilisateurs
+plus tard sans tout reconfigurer). Propriété "URL prefix" https://charbonade-acacia.ch/ vérifiée
+via la méthode "HTML file" : fichier googlefc6a1860639f1614.html à la racine du site (contenu
+standard "google-site-verification: <nom du fichier>"), généré par Claude sans avoir besoin que
+le client le télécharge lui-même. NE JAMAIS SUPPRIMER CE FICHIER — Google perd la vérification
+de propriété si le fichier disparaît, même après une vérification réussie. sitemap.xml soumis
+dans Search Console, et indexation de la page d'accueil demandée manuellement (URL Inspection →
+Request indexing) pour accélérer le premier passage de Google plutôt que d'attendre le crawl
+naturel. Prochaine étape suggérée mais pas encore faite : réclamer/mettre à jour la fiche Google
+Business Profile du restaurant (probablement existante depuis 2020 sous "Restaurant Acacia"),
+souvent plus visible qu'un lien organique pour une recherche du type "charbonade acacia" ou
+"restaurant les acacias genève".
 
 
 Netlify Forms — configuration
