@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reservas & Contacto — Charbonade Acacia</title>
 <meta name="description" content="Reserve una mesa en Charbonade Acacia, parrilladas y charbonnades en Ginebra. Formulario de reserva o mensaje directo por WhatsApp.">
-<link rel="icon" href="/assets/logo.png">
+<link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -155,7 +155,24 @@
             </div>
             <div class="field">
               <label for="hora">Hora *</label>
-              <input type="time" id="hora" name="hora" required>
+              <select id="hora" name="hora" required>
+                <option value="" disabled selected>Elegir una hora</option>
+                <optgroup label="Mediodía">
+                  <option value="11:30">11h30</option>
+                  <option value="12:00">12h00</option>
+                  <option value="12:30">12h30</option>
+                  <option value="13:00">13h00</option>
+                  <option value="13:30">13h30</option>
+                </optgroup>
+                <optgroup label="Noche">
+                  <option value="18:30">18h30</option>
+                  <option value="19:00">19h00</option>
+                  <option value="19:30">19h30</option>
+                  <option value="20:00">20h00</option>
+                  <option value="20:30">20h30</option>
+                  <option value="21:00">21h00</option>
+                </optgroup>
+              </select>
             </div>
             <div class="field">
               <label for="personas">Número de personas *</label>

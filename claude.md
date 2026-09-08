@@ -91,7 +91,9 @@ Structure des fichiers
 ├── assets/
 │   ├── images/          → Photos du restaurant et des plats (à venir)
 │   ├── logo.png          → Logo, encre foncée (fonds clairs / crème)
-│   └── logo-light.png    → Même logo, encre recolorée en clair (fonds sombres — footer)
+│   ├── logo-light.png    → Même logo, encre recolorée en clair (fonds sombres — footer)
+│   └── favicon.png       → Favicon carré (596x324 → recadré 300x300), juste l'arbre, sans texte
+│                           (voir "Favicon" plus bas)
 ├── client-raw/           → Fichiers bruts du client (contrat, photos sources) — PAS suivi
 │                           par le site, exclu du regard public par convention de nommage
 ├── .gitignore
@@ -358,6 +360,17 @@ Carte Google Maps intégrée (iframe)
 Note bien visible juste avant l'envoi : l'envoi du formulaire n'est PAS une confirmation —
 la confirmation arrive par email ou téléphone dans les prochaines heures
 
+Champ "Heure" restreint à des créneaux fixes (septembre 2026, demandé par Gilberto) : avant,
+un `<input type="time">` libre permettait de demander une réservation à n'importe quelle heure,
+y compris en pleine fermeture (ex. 15h30). Un `<input type="time">` ne peut exprimer qu'une
+seule plage continue via min/max, pas deux plages séparées (midi ET soir) — remplacé par un
+`<select>` avec deux `<optgroup>` (Midi / Soir), par pas de 30 minutes : 11h30 à 13h30 le midi,
+18h30 à 21h00 le soir. Values au format 24h (ex. "12:30") dans les 3 langues pour rester
+cohérent dans les soumissions Netlify Forms ; seul le texte affiché change — 24h en FR/ES
+("12h30"), 12h am/pm en EN ("12:30pm"), cohérent avec le format déjà utilisé dans le tableau
+d'horaires de chaque langue. Le CSS `.field select` existait déjà (partagé avec input/textarea),
+aucun style à ajouter.
+
 Retour client (août 2026) sur le bloc "Réserver sur WhatsApp" : jugé trop imposant, un cadre qui
 "cassait" le design — grande carte blanche élevée (padding généreux, ombre, coins 16px, centrée)
 répétant le même message 3 fois (sous-titre de page, puis titre + texte + bouton + note dans la
@@ -536,6 +549,20 @@ naturel. Prochaine étape suggérée mais pas encore faite : réclamer/mettre à
 Business Profile du restaurant (probablement existante depuis 2020 sous "Restaurant Acacia"),
 souvent plus visible qu'un lien organique pour une recherche du type "charbonade acacia" ou
 "restaurant les acacias genève".
+
+Favicon (septembre 2026) : sur les résultats Google, l'icône du site restait une icône
+générique (globe blanc) au lieu du logo. Cause : `<link rel="icon" href="/assets/logo.png">`
+pointait vers le logo complet, qui n'est PAS carré (596×324) — Google (et les navigateurs)
+attendent une icône carrée, sinon ils l'ignorent ou l'affichent mal. Corrigé en créant
+assets/favicon.png : un recadrage carré (300×300) qui isole juste la silhouette de l'arbre
+(sans le texte "ACACIA RESTAURANT", illisible à 16-32px de toute façon), généré à partir du
+logo.png existant via un script (canvas dans un navigateur headless), pas redessiné à la main.
+Deux versions testées à taille réelle (16/32/48px) avant de choisir : une avec beaucoup de
+marge autour de l'arbre (fidèle à la largeur du logo mais trop pâle/petit une fois réduit) et
+une recadrée plus serrée sur le tronc (arbre qui remplit mieux le cadre, plus lisible en tout
+petit) — la version resserrée a été retenue. `<link rel="icon">` mis à jour sur les 12 pages
+pour pointer vers /assets/favicon.png au lieu de /assets/logo.png (logo.png reste utilisé tel
+quel dans le header/nav, où il a la place d'être affiché en entier).
 
 
 Netlify Forms — configuration
