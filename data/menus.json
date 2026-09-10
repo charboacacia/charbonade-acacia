@@ -1,7 +1,9 @@
 {
   "_todo": "Prix du cordon bleu de porc (lundi) à confirmer avec Carolina & Gilberto.",
   "_todo_fermetures": "Ajouter ici chaque date (format AAAA-MM-JJ, heure de Genève) où le restaurant ferme exceptionnellement pour un jour férié.",
+  "_todo_suspendu": "Ajouter ici chaque date (format AAAA-MM-JJ) où le restaurant ouvre normalement mais SANS menu du jour (ex. jour férié) — contrairement à fermetures_exceptionnelles, le badge horaires reste normal, seul le menu du jour disparaît ce jour-là. Retirer la date une fois passée.",
   "fermetures_exceptionnelles": [],
+  "menu_du_jour_suspendu": ["2026-09-10"],
   "lundi": {
     "_note": "Change environ tous les 15 jours à la discrétion de Carolina & Gilberto — Adrien préviendra quand il faut mettre à jour ces 2 plats.",
     "plats": [

@@ -22,6 +22,12 @@ function getZurichDayAndHour() {
   return { day: dayIndex, hour };
 }
 
+// Date du jour à Genève au format AAAA-MM-JJ, pour comparer avec menu_du_jour_suspendu
+// (jours normalement servis mais sans menu du jour cette fois-ci, ex. jour férié).
+function getZurichDateString() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Zurich' }).format(new Date());
+}
+
 async function loadMenuDuJour() {
   const containers = document.querySelectorAll('[data-menu-preview], [data-menu-full]');
   if (!containers.length) return;
@@ -30,6 +36,7 @@ async function loadMenuDuJour() {
   const { day, hour } = getZurichDayAndHour();
   const todayKey = dayToKey[day];
   const isLunchWindow = hour < 14;
+  const todayDate = getZurichDateString();
 
   let data = null;
   try {
@@ -39,7 +46,11 @@ async function loadMenuDuJour() {
     data = null;
   }
 
-  const todayMenu = data && todayKey && isLunchWindow ? data[todayKey] : null;
+  const suspendu = Array.isArray(data && data.menu_du_jour_suspendu)
+    ? data.menu_du_jour_suspendu.includes(todayDate)
+    : false;
+
+  const todayMenu = data && todayKey && isLunchWindow && !suspendu ? data[todayKey] : null;
   const plats = todayMenu && Array.isArray(todayMenu.plats) ? todayMenu.plats : [];
 
   containers.forEach((container) => {

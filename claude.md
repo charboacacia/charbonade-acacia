@@ -450,6 +450,18 @@ Le badge affiche "Ouvert, ferme à Xh" ou "Fermé, ouvre à Xh" (même jour), "F
 exceptionnelle est demandé par le client, éditer uniquement data/menus.json, aucun code à
 toucher.
 
+Cas différent : menu du jour suspendu sans fermer le restaurant (ajouté septembre 2026). Le
+10 septembre 2026 (jeudi, jour férié) le restaurant ouvrait normalement à midi mais sans les 2
+plats du jour habituels — ce n'est PAS une fermeture exceptionnelle (le badge horaires doit
+rester normal), seul le menu du jour doit disparaître ce jour précis, sans toucher aux jeudis
+suivants. Ajouté un champ séparé dans data/menus.json : `"menu_du_jour_suspendu": ["AAAA-MM-JJ"]`
+— menu.js compare la date du jour (Europe/Zurich, format AAAA-MM-JJ via
+`Intl.DateTimeFormat('en-CA', ...)`) à cette liste ; si la date y figure, aucun menu du jour ne
+s'affiche ce jour-là, quel que soit le jour de la semaine ou l'heure — comportement identique à
+un jour sans menu prévu (message neutre déjà dans le HTML). Pour une future occasion similaire :
+ajouter simplement la date à ce tableau, puis la retirer une fois passée (pas obligatoire mais
+garde le fichier propre). Aucun code à modifier pour cet usage courant.
+
 
 Système trilingue FR / ES / EN — IMPLÉMENTÉ (juillet 2026)
 
