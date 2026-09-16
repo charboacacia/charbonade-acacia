@@ -597,6 +597,23 @@ couvre les 3 formulaires en un seul réglage). Les 3 formulaires apparaissent ma
 pour une nouvelle langue ou une nouvelle page, il faudra un nouveau déploiement de master pour
 que Netlify le détecte (la détection ne scanne pas rétroactivement les anciens déploiements).
 
+Bug corrigé (septembre 2026) : sur mobile (téléphone réel + vue mobile navigateur), le menu
+burger ouvert laissait voir un morceau du panneau de nav qui dépassait de l'écran, avec un
+défilement horizontal possible. Cause : `overflow-x: hidden` n'était posé que sur `body`, pas
+sur `html` — dans ce cas, un descendant en `position: fixed` (ici `.nav__links`, plein écran,
+translateX(100%) quand fermé) peut rester atteignable en scroll horizontal même si `body` le
+"cache", car `overflow` sur `body` ne limite pas fiablement l'étendue visuelle des éléments fixed
+positionnés par rapport au viewport. Corrigé en ajoutant `overflow-x: hidden` aussi sur `html`
+(fusionné avec la règle `scroll-behavior: smooth` déjà présente). Vérifié : le panneau reste
+maintenant hors écran quand fermé et pile aligné quand ouvert, aucun scroll horizontal possible.
+Note au passage (pas un bug visible, rien touché) : `.motif--watermark` déborde légèrement
+(~60px) sur les très petits écrans (375px) — déjà invisible avant et après ce fix grâce au
+overflow-x:hidden de body, aucune action nécessaire.
+
+Lien du footer "Site par Arzabe Studio" (septembre 2026) : pointe maintenant vers
+https://arzabe-studio.ch (target="_blank" rel="noopener"), sur les 12 pages — auparavant du
+texte brut, pas de lien.
+
 Ce qu'il ne faut JAMAIS faire
 
 
