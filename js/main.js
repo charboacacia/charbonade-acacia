@@ -70,12 +70,22 @@ function formatHour(decimal) {
   return m === 0 ? `${h}h` : `${h}h${String(m).padStart(2, '0')}`;
 }
 
-function computeOpenStatus(holidays) {
+// Un jour normalement ouvert peut avoir ses créneaux remplacés exceptionnellement pour une
+// date précise (ex. fermé le soir un jour donné, mais ouvert normalement le midi) sans changer
+// OPENING_HOURS ni toucher fermetures_exceptionnelles (qui ferme la journée entière).
+function getSlotsForDate(weekday, dateStr, overrides) {
+  if (overrides && Object.prototype.hasOwnProperty.call(overrides, dateStr)) {
+    return overrides[dateStr];
+  }
+  return OPENING_HOURS[weekday] || [];
+}
+
+function computeOpenStatus(holidays, overrides) {
   const now = getZurichNow();
   const todayIsHoliday = holidays.includes(now.dateStr);
 
   if (!todayIsHoliday) {
-    const slots = OPENING_HOURS[now.weekday] || [];
+    const slots = getSlotsForDate(now.weekday, now.dateStr, overrides);
     const currentSlot = slots.find(([start, end]) => now.decimalHour >= start && now.decimalHour < end);
     if (currentSlot) return { open: true, hour: formatHour(currentSlot[1]) };
 
@@ -87,7 +97,7 @@ function computeOpenStatus(holidays) {
     const weekday = (now.weekday + offset) % 7;
     const dateStr = addDaysToDateStr(now.dateStr, offset);
     if (holidays.includes(dateStr)) continue;
-    const slots = OPENING_HOURS[weekday] || [];
+    const slots = getSlotsForDate(weekday, dateStr, overrides);
     if (slots.length) return { open: false, dayOffset: offset, weekday, hour: formatHour(slots[0][0]) };
   }
 
@@ -102,7 +112,10 @@ function initStatusBadge() {
     .then((response) => (response.ok ? response.json() : { fermetures_exceptionnelles: [] }))
     .then((data) => {
       const holidays = Array.isArray(data.fermetures_exceptionnelles) ? data.fermetures_exceptionnelles : [];
-      const status = computeOpenStatus(holidays);
+      const overrides = data.horaires_exceptionnels && typeof data.horaires_exceptionnels === 'object'
+        ? data.horaires_exceptionnels
+        : null;
+      const status = computeOpenStatus(holidays, overrides);
       if (!status) return;
 
       let text;
@@ -135,6 +148,20 @@ function initStatusBadge() {
     });
 }
 
+// Message ponctuel sous les horaires (ex. "fermé le soir du 28 septembre"). Le texte vient du
+// HTML (data-exception-notice porte juste la date concernée) ; ce script se contente de le
+// montrer jusqu'à cette date incluse, puis de le laisser caché tout seul ensuite — pas besoin
+// de revenir retirer le message après coup.
+function initExceptionNotice() {
+  const notices = document.querySelectorAll('[data-exception-notice]');
+  if (!notices.length) return;
+  const today = getZurichNow().dateStr;
+  notices.forEach((notice) => {
+    const untilDate = notice.getAttribute('data-exception-notice');
+    notice.hidden = !(untilDate && today <= untilDate);
+  });
+}
+
 function initScrollReveal() {
   const targets = document.querySelectorAll('.reveal');
   if (!targets.length) return;
@@ -161,5 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
   initWhatsAppLinks();
   initStatusBadge();
+  initExceptionNotice();
   initScrollReveal();
 });

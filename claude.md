@@ -460,7 +460,35 @@ suivants. Ajouté un champ séparé dans data/menus.json : `"menu_du_jour_suspen
 s'affiche ce jour-là, quel que soit le jour de la semaine ou l'heure — comportement identique à
 un jour sans menu prévu (message neutre déjà dans le HTML). Pour une future occasion similaire :
 ajouter simplement la date à ce tableau, puis la retirer une fois passée (pas obligatoire mais
-garde le fichier propre). Aucun code à modifier pour cet usage courant.
+garde le fichier propre). Aucun code à modifier pour cet usage courant. Date du 10 septembre
+retirée du tableau une fois passée (tableau vide en attendant la prochaine occasion).
+
+Troisième cas, différent des deux précédents : un jour normalement ouvert dont un seul créneau
+change pour UNE date précise, sans toucher au reste (ajouté septembre 2026 — le 28 septembre,
+lundi, le restaurant n'ouvre pas le soir mais ouvre normalement à midi). Ni
+fermetures_exceptionnelles (fermerait toute la journée, y compris le midi) ni
+menu_du_jour_suspendu (ne concerne que l'affichage des plats, pas le badge horaires) ne
+convenaient. Ajouté `"horaires_exceptionnels": { "AAAA-MM-JJ": [[début, fin], ...] }` dans
+data/menus.json : pour cette date précise, ces créneaux remplacent entièrement ceux
+d'OPENING_HOURS (main.js) — un tableau vide fermerait la journée entière, comme
+fermetures_exceptionnelles mais formulé différemment. main.js (`getSlotsForDate`,
+`computeOpenStatus`) consulte cette table aussi bien pour le statut du jour même que pour les
+14 jours de recherche à l'avance (`computeOpenStatus(holidays, overrides)`), donc le badge
+répond correctement même consulté plusieurs jours avant la date concernée.
+
+En plus du badge (qui ne montre l'état qu'au moment précis où quelqu'un consulte le site),
+un message ponctuel a été ajouté sous le tableau d'horaires d'index.html et reservation.html
+(× FR/ES/EN, 6 fichiers) pour prévenir à l'avance quiconque visite le site avant cette date —
+sinon quelqu'un planifiant le 28 au soir ne verrait rien d'inhabituel en consultant le site
+aujourd'hui. Texte dans le HTML (`<p data-exception-notice="2026-09-28" hidden>...texte...</p>`,
+couleur --color-accent, un ton plus marqué que la note "cuisine ferme à..." juste au-dessus vu
+que c'est un vrai changement d'horaire, pas une info permanente) ; `initExceptionNotice()` dans
+main.js compare juste la date du jour à l'attribut et affiche/cache, sans texte codé en dur dans
+le JS. Le message se cache tout seul automatiquement après la date (comparaison de chaînes
+AAAA-MM-JJ) — pas besoin d'y revenir, contrairement à menu_du_jour_suspendu où il faut retirer
+la date manuellement. Pour une prochaine occurrence similaire (autre date, autre créneau) :
+changer la date dans horaires_exceptionnels ET dans les 6 attributs data-exception-notice (+ le
+texte du message si le créneau fermé change), aucune autre modification de code nécessaire.
 
 
 Système trilingue FR / ES / EN — IMPLÉMENTÉ (juillet 2026)
