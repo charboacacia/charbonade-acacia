@@ -5,7 +5,7 @@
   "_todo_horaires_exceptionnels": "Pour un jour normalement ouvert dont les créneaux changent exceptionnellement UNE date précise (ex. fermé le soir mais ouvert le midi) : clé = date AAAA-MM-JJ, valeur = les créneaux [[début, fin], ...] qui remplacent ceux du jour ce jour-là (tableau vide = fermé toute la journée). Ne touche ni fermetures_exceptionnelles ni OPENING_HOURS dans main.js. Le message sous les horaires (data-exception-notice dans le HTML) se cache tout seul après la date, mais l'entrée ici reste à retirer manuellement une fois passée.",
   "fermetures_exceptionnelles": [],
   "horaires_exceptionnels": {
-    "2026-09-28": [[11, 14]]
+    "2026-11-23": [[11, 14]]
   },
   "menu_du_jour_suspendu": [],
   "lundi": {

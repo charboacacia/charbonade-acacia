@@ -479,8 +479,8 @@ répond correctement même consulté plusieurs jours avant la date concernée.
 En plus du badge (qui ne montre l'état qu'au moment précis où quelqu'un consulte le site),
 un message ponctuel a été ajouté sous le tableau d'horaires d'index.html et reservation.html
 (× FR/ES/EN, 6 fichiers) pour prévenir à l'avance quiconque visite le site avant cette date —
-sinon quelqu'un planifiant le 28 au soir ne verrait rien d'inhabituel en consultant le site
-aujourd'hui. Texte dans le HTML (`<p data-exception-notice="2026-09-28" hidden>...texte...</p>`,
+sinon quelqu'un planifiant le soir concerné ne verrait rien d'inhabituel en consultant le site
+aujourd'hui. Texte dans le HTML (`<p data-exception-notice="AAAA-MM-JJ" hidden>...texte...</p>`,
 couleur --color-accent, un ton plus marqué que la note "cuisine ferme à..." juste au-dessus vu
 que c'est un vrai changement d'horaire, pas une info permanente) ; `initExceptionNotice()` dans
 main.js compare juste la date du jour à l'attribut et affiche/cache, sans texte codé en dur dans
@@ -489,6 +489,11 @@ AAAA-MM-JJ) — pas besoin d'y revenir, contrairement à menu_du_jour_suspendu o
 la date manuellement. Pour une prochaine occurrence similaire (autre date, autre créneau) :
 changer la date dans horaires_exceptionnels ET dans les 6 attributs data-exception-notice (+ le
 texte du message si le créneau fermé change), aucune autre modification de code nécessaire.
+
+Deuxième occurrence (novembre 2026) : même mécanisme réutilisé pour le soir du lundi 23
+novembre 2026 (fermé le soir, ouvert normalement à midi) — date du 28 septembre (passée)
+remplacée par 2026-11-23 dans data/menus.json (horaires_exceptionnels) et dans les 6 attributs
+data-exception-notice, aucun autre changement de code.
 
 
 Système trilingue FR / ES / EN — IMPLÉMENTÉ (juillet 2026)
