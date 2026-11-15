@@ -490,10 +490,16 @@ la date manuellement. Pour une prochaine occurrence similaire (autre date, autre
 changer la date dans horaires_exceptionnels ET dans les 6 attributs data-exception-notice (+ le
 texte du message si le créneau fermé change), aucune autre modification de code nécessaire.
 
-Deuxième occurrence (novembre 2026) : même mécanisme réutilisé pour le soir du lundi 23
-novembre 2026 (fermé le soir, ouvert normalement à midi) — date du 28 septembre (passée)
-remplacée par 2026-11-23 dans data/menus.json (horaires_exceptionnels) et dans les 6 attributs
-data-exception-notice, aucun autre changement de code.
+Deuxième occurrence (novembre 2026) : le lundi 23 novembre 2026 est fermé toute la journée
+(midi ET soir), pas seulement le soir — un premier réglage (horaires_exceptionnels, ouvert à
+midi/fermé le soir) a été corrigé après clarification du client. Mécanisme utilisé : identique
+au cas "menu du jour suspendu sans fermer le restaurant" plus haut, mais ici le restaurant est
+réellement fermé, donc fermetures_exceptionnelles (pas horaires_exceptionnels, qui reste `{}`)
+porte la date 2026-11-23 — le badge horaires affiche "Fermé" toute la journée. menu_du_jour_suspendu
+porte aussi 2026-11-23 (cohérent, pas de menu du jour un jour fermé). Le message d'avertissement
+(6 attributs data-exception-notice) a été réécrit pour dire "fermé toute la journée" au lieu de
+"fermé le soir — ouvert à midi". Les deux dates (fermetures_exceptionnelles et
+menu_du_jour_suspendu) sont à retirer manuellement une fois le 23 novembre passé.
 
 
 Système trilingue FR / ES / EN — IMPLÉMENTÉ (juillet 2026)
