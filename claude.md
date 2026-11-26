@@ -501,12 +501,13 @@ porte aussi 2026-11-23 (cohérent, pas de menu du jour un jour fermé). Le messa
 "fermé le soir — ouvert à midi". Les deux dates (fermetures_exceptionnelles et
 menu_du_jour_suspendu) ont été retirées une fois le 23 novembre passé.
 
-Troisième occurrence (novembre 2026) : le dimanche 29 novembre 2026 est fermé le soir
-uniquement, ouvert normalement à midi — retour au mécanisme "troisième cas" du dessus
-(horaires_exceptionnels: {"2026-11-29": [[11, 14]]}, pas fermetures_exceptionnelles). Date du
-23 novembre (passée) retirée de fermetures_exceptionnelles et menu_du_jour_suspendu au même
-moment ; les 6 attributs data-exception-notice mis à jour avec la date et le texte du 29
-novembre. À retirer de horaires_exceptionnels une fois cette date passée.
+Troisième occurrence (novembre 2026) : le dimanche 29 novembre 2026 avait été fermé le soir
+uniquement (horaires_exceptionnels: {"2026-11-29": [[11, 14]]}), suite à une réservation
+particulière. Cette réservation a été annulée quelques jours plus tard (26 novembre) — horaires
+normaux restaurés pour ce dimanche. horaires_exceptionnels remis à `{}` et les 6 `<p
+data-exception-notice="2026-11-29">` entièrement retirés du HTML (pas juste laissés hidden :
+l'attribut n'existe que lorsqu'une exception réelle est active, voir le tout premier ajout de ce
+mécanisme en septembre 2026).
 
 
 Système trilingue FR / ES / EN — IMPLÉMENTÉ (juillet 2026)
